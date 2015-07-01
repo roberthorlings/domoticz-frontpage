@@ -1,0 +1,19 @@
+.lightbulb-on {
+	color: yellow; 
+	font-size: 1.4em; line-height: 1.4em;
+}
+
+/* Make sure the horizontal slider only has a small bottom margin */
+.slider.slider-horizontal { margin-bottom: 15px; }
+
+/* Make sure all data is centered for the small boxes */
+.small-box-body { text-align: center; height: 256px;}
+
+/* Box of up-down buttons */
+.updown-buttons { margin-top: 5px; }
+
+/* List with weather information */
+.weather-list .btn-default { float: left; width: 48px; }
+.weather-list .weather-item { margin-left: 60px; }
+.weather-list .item { padding: 3px 0; }
+.weather-list .label { font-size: 120%; margin-left: 3px; }
