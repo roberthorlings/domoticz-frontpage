@@ -23,7 +23,7 @@ Domotica.domoticz = {
 		// Handle updates
 		this.call("devices", { plan: 2 }, function(data) {
 			// For now, only handle 'results' part
-			$.each(data.results, function(idx, result) {
+			$.each(data.result, function(idx, result) {
 				var id = result.idx;
 				
 				// Lookup the element for this id
@@ -45,6 +45,8 @@ Domotica.domoticz = {
 			});
 		});
 		
+		// TODO: Update 'last updated' date
+		
 		// Make sure to start updating again 
 		this.interval = setInterval(this.updateFrequency, this.update);
 	},
@@ -52,6 +54,7 @@ Domotica.domoticz = {
 	change: {
 		normalSwitch: function(id, status) {
 			console.log( "Update switch " + id + " to " + status );
+			Domotica.domoticz.call( "command", { param: "switchlight", idx: id, switchcmd: status ? "On" : "Off" } );
 		},
 		dimmerSwitch: function(id, value) {
 			console.log( "Update dimmer switch " + id + " to " + value );
@@ -69,10 +72,10 @@ Domotica.domoticz = {
 	updateWidget: { 
 		dimmerSwitch: function(element, result) {
 			// Update the slider to show the dimmer value
-			Domotica.ui.updateSlider(element, result.Level);
+			Domotica.ui.setSliderValue(element, result.Level);
 			
 			// Also do updating for normal switches
-			Domotica.domoticz.updateWidget.normalSwitch(element, result);
+			this.normalSwitch(element, result);
 		},
 		normalSwitch: function(element, result) {
 			// Update the status text
@@ -80,17 +83,17 @@ Domotica.domoticz = {
 			element.find(".domoticz-status" ).text(status);
 			
 			// Update the lightbulb
-			Domotica.domoticz.toggleSwitch(result.Status == "On");
+			Domotica.ui.toggleSwitch(element, result.Status == "On");
 			
 			// Also do generic updating
-			Domotica.domoticz.updateWidget.generic(element, result);
+			this.generic(element, result);
 		},
 		heater: function(element, result) {
 			// Update the slider to show the dimmer value
-			Domotica.ui.updateSlider(element, result.Level);
+			Domotica.ui.setSliderValue(element, result.Level);
 			
 			// Also do generic updating
-			Domotica.domoticz.updateWidget.generic(element, result);
+			this.generic(element, result);
 		},
 		
 		// Generic update method
@@ -111,7 +114,7 @@ Domotica.domoticz = {
 	
 	// Basic method to send commands to Domoticz
 	call: function(type, parameters, callback) {
-		var url = "http://192.168.1.66/json.htm";
+		var url = "http://192.168.1.66:8080/json.htm";
 		if( typeof( parameters) == "undefined" ) {
 			parameters = {};
 		}

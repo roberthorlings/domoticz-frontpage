@@ -161,13 +161,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <section class="sidebar">
           <!-- Sidebar Menu -->
           <ul class="sidebar-menu">
-            <li class="active"><a href="#"><i class='fa fa-home'></i> <span>Home</span></a></li>
+            <li class="active"><a href="index.html"><i class='fa fa-home'></i> <span>Home</span></a></li>
             <li class="header">Options</li>
             <!-- Optionally, you can add icons to the links -->
-            <li><a href="#"><i class='fa fa-lightbulb-o'></i> <span>Devices</span></a></li>
-            <li><a href="#"><i class='wi wi-horizon'></i> <span>Weather</span></a></li>
-            <li><a href="#"><i class='fa fa-music'></i> <span>Music</span></a></li>
-            <li><a href="#"><i class='fa fa-film'></i> <span>Entertainment</span></a></li>
+            <li><a href="devices.html"><i class='fa fa-lightbulb-o'></i> <span>Devices</span></a></li>
+            <li><a href="weather.html"><i class='wi wi-horizon'></i> <span>Weather</span></a></li>
+            <li><a href="music.html"><i class='fa fa-music'></i> <span>Music</span></a></li>
+            <li><a href="entertainment.html"><i class='fa fa-film'></i> <span>Entertainment</span></a></li>
           </ul><!-- /.sidebar-menu -->
         </section>
         <!-- /.sidebar -->
@@ -192,17 +192,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 		  <div class="row">
             <div class="col-md-3 col-sm-6 col-xs-12">
-              <div class="info-box bg-aqua switch dimmer-switch" data-domoticz-id="1" data-status="true">
+              <div class="info-box bg-aqua switch dimmer-switch" data-domoticz-id="37" data-status="true">
                 <span class="info-box-icon"><i class="fa fa-lightbulb-o lightbulb-on"></i></span>
                 <div class="info-box-content">
                   <span class="info-box-text">Lampen eettafel</span>
                   <span class="info-box-number domoticz-status">Aan</span>
-          		  <div class="progress slider" id="lampen-eettafel-slider"></div>
+          		  <div class="progress value-slider" id="lampen-eettafel-slider"></div>
                 </div><!-- /.info-box-content -->
               </div><!-- /.info-box -->
             </div><!-- /.col -->
             <div class="col-md-3 col-sm-6 col-xs-12">
-              <div class="info-box bg-green switch" data-domoticz-id="2" data-status="false">
+              <div class="info-box bg-green switch" data-domoticz-id="18" data-status="false">
                 <span class="info-box-icon"><i class="fa fa-lightbulb-o"></i></span>
                 <div class="info-box-content">
                   <span class="info-box-text">Lamp bank</span>
@@ -216,7 +216,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div><!-- /.info-box -->
             </div><!-- /.col -->
             <div class="col-md-3 col-sm-6 col-xs-12">
-              <div class="info-box bg-yellow switch" data-domoticz-id="3" data-status="false">
+              <div class="info-box bg-yellow switch" data-domoticz-id="16" data-status="false">
                 <span class="info-box-icon"><i class="fa fa-lightbulb-o"></i></span>
                 <div class="info-box-content">
                   <span class="info-box-text">Lampen TV kast</span>
@@ -230,7 +230,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div><!-- /.info-box -->
             </div><!-- /.col -->
             <div class="col-md-3 col-sm-6 col-xs-12">
-              <div class="info-box bg-red switch" data-domoticz-id="4" data-status="false">
+              <div class="info-box bg-red switch disabled" data-domoticz-id="TODO" data-status="false">
                 <span class="info-box-icon"><i class="fa fa-lightbulb-o"></i></span>
                 <div class="info-box-content">
                   <span class="info-box-text">Lampen keuken</span>
@@ -248,25 +248,25 @@ scratch. This page gets rid of all links and provides the needed markup only.
 		  <!-- Second row with information -->
 		  <div class="row">
 		  	<div class="col-md-3 col-sm-6 col-xs-12">
-              <div class="info-box heater" data-domoticz-id="5">
+              <div class="info-box heater" data-domoticz-id="45">
                 <span class="info-box-icon bg-blue"><i class="ion ion-flame"></i></span>
                 <div class="info-box-content">
                   <span class="info-box-text">Verwarming zijraam</span>
                   <span class="info-box-number">12&deg;C</span>
-          		  <div class="progress slider" id="verwarming-zijraam-slider" data-slider-value="12"></div>
+          		  <div class="pprogress value-slider" id="verwarming-zijraam-slider" data-slider-value="12"></div>
                 </div><!-- /.info-box-content -->
               </div><!-- /.info-box -->
               
-              <div class="info-box heater" data-domoticz-id="6">
+              <div class="info-box heater disabled" data-domoticz-id="TODO">
                 <span class="info-box-icon bg-yellow"><i class="ion ion-flame"></i></span>
                 <div class="info-box-content">
                   <span class="info-box-text">Verwarming achterraam</span>
                   <span class="info-box-number">23&deg;C</span>
-          		  <div class="progress slider" id="verwarming-zijraam-slider" data-slider-value="23"></div>
+          		  <div class="progress value-slider" id="verwarming-zijraam-slider" data-slider-value="23"></div>
                 </div><!-- /.info-box-content -->
               </div><!-- /.info-box -->
               
-              <div class="info-box sunscreen" data-domoticz-id="7">
+              <div class="info-box sunscreen disabled" data-domoticz-id="TODO">
                 <span class="info-box-icon bg-green"><i class="wi wi-day-sunny"></i></span>
                 <div class="info-box-content">
 					<div class="btn-group-vertical pull-right updown-buttons">
@@ -280,17 +280,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               
 		  	</div>
 
-		  	<div class="col-md-2 col-sm-3 col-xs-6">
-			  <div class="box box-primary">
-                <div class="box-header with-border">
-                  <h3 class="box-title">Temperature</h3>
-                </div><!-- /.box-header -->
-                <div class="small-box-body">
-              	  <canvas class="chart tab-pane active" id="temperature-chart" style="position: relative;" height="248" width="100%"></canvas>
-              	</div>
-              </div>
-            </div>
-		  	<div class="col-md-2 col-sm-3 col-xs-6">
+		  	<div class="col-md-3 col-sm-6 col-xs-12">
 			  <div class="box box-primary">
                 <div class="box-header with-border">
                   <h3 class="box-title">Buienradar</h3>
@@ -300,7 +290,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               	</div>
               </div>
             </div>
-		  	<div class="col-md-2 col-sm-3 col-xs-6">
+		  	<div class="col-md-3 col-sm-6 col-xs-12">
 			  <div class="box box-primary">
                 <div class="box-header with-border">
                   <h3 class="box-title">Weeronline</h3>
@@ -314,30 +304,34 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div>
             </div>
             
-		  <div class="row">
-		  	<div class="col-md-3 col-sm-6 col-xs-12">
-              <div class="info-box music media" data-domoticz-id="5">
+		  	<div class="col-md-3 col-sm-6 hidden-xs">
+              <div class="box info-box music media" data-domoticz-id="5">
                 <span class="info-box-icon bg-blue"><i class="fa fa-music"></i></span>
                 <div class="info-box-content">
                   <span class="info-box-text">Status: aan</span>
                   <span class="info-box-number">Handel - Messiah ouverture</span>
-          		  <div class="volume slider" id="music-volume-slider" data-slider-value="4"></div>
+          		  <div class="volume value-slider" id="music-volume-slider" data-slider-value="4"></div>
                 </div><!-- /.info-box-content -->
+                
+				<!-- Overlay is shown to disable element -->
+				<div class="overlay"></div>
               </div><!-- /.info-box -->
               
-              <div class="info-box television media" data-domoticz-id="6">
+              <div class="box info-box television media" data-domoticz-id="6">
                 <span class="info-box-icon bg-yellow"><i class="ion ion-ios-film-outline"></i></span>
                 <div class="info-box-content">
                   <span class="info-box-text">Status: uit</span>
                   <span class="info-box-number">...</span>
-          		  <div class="volume slider" id="tv-volume-slider" data-slider-value="6"></div>
+          		  <div class="volume value-slider" id="tv-volume-slider" data-slider-value="6"></div>
                 </div><!-- /.info-box-content -->
+                
+				<!-- Overlay is shown to disable element -->
+				<div class="overlay"></div>
               </div><!-- /.info-box -->
-              
 		  	</div>
 		  </div>            
 		  <div class="row">
-		  	<div class="col-md-4 col-sm-6 col-xs-12">
+		  	<div class="col-md-3 col-sm-6 col-xs-12">
 			  <div class="box box-primary">
                 <div class="box-header with-border">
                   <h3 class="box-title">Weer</h3>
@@ -345,19 +339,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </div>
                 </div><!-- /.box-header -->
                 <div class="box-body">
-                  <ul class="products-list product-list-in-box weather-list">
+                  <ul class="products-list product-list-in-box current-weather weather-list">
                     <li class="item generic-weather generic-temperature">
                       <div class="btn btn-default">
                       	<i class="wi wi-day-showers"></i>
                       </div>
                       <div class="weather-item">
-                        <a href="javascript::;" class="product-title">Weer vandaag 
-                        	<span class="label label-danger pull-right"><span class="temp_max">..</span> &deg;C</span>
-                        	<span class="label label-warning pull-right"><span class="temp">..</span> &deg;C</span>
-                        	<span class="label label-info pull-right"><span class="temp_min">..</span> &deg;C</span>
+                        <a href="javascript:;" class="product-title">Weer vandaag 
+                        	<span class="label label-info pull-right"><span class="temp">..</span> &deg;C</span>
                         </a>
                         <span class="product-description">
-                          Zonnig met af en toe buien
+                          ..
                         </span>
                       </div>
                     </li><!-- /.item -->
@@ -366,7 +358,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       	<i class="wi wi-beafort-5"></i>
                       </div>
                       <div class="weather-item">
-                        <a href="javascript::;" class="product-title">Wind<span class="label label-success pull-right">ZW 5</span></a>
+                        <a href="javascript:;" class="product-title">Wind<span class="label label-success pull-right">-</span></a>
                       </div>
                     </li><!-- /.item -->
                     <li class="item generic-weather">
@@ -374,7 +366,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       	<i class="fa fa-tint"></i>
                       </div>
                       <div class="weather-item">
-                        <a href="javascript::;" class="product-title">Vochtigheidsgraad <span class="label label-warning pull-right"><span class="humidity">..</span> %</span></a>
+                        <a href="javascript:;" class="product-title">Vochtigheidsgraad <span class="label label-warning pull-right"><span class="humidity">..</span> %</span></a>
                       </div>
                     </li><!-- /.item -->
                     <li class="item generic-weather">
@@ -382,15 +374,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       	<i class="wi wi-time-12"></i>
                       </div>
                       <div class="weather-item">
-                        <a href="javascript::;" class="product-title">Luchtdruk <span class="label label-info pull-right"><span class="pressure">..</span> hPA</span></a>
+                        <a href="javascript:;" class="product-title">Luchtdruk <span class="label label-info pull-right"><span class="pressure">..</span> hPA</span></a>
                       </div>
                     </li><!-- /.item -->
                   </ul>
                 </div><!-- /.box-body -->
+                
+				<div class="overlay loading">
+				  <i class="fa fa-refresh fa-spin"></i>
+				</div>
               </div>		  	
 		  	</div>
 
-		  	<div class="col-md-2 col-sm-6 col-xs-12">
+		  	<div class="col-md-3 col-sm-6 col-xs-12">
 			  <div class="box box-primary">
                 <div class="box-header with-border">
                   <h3 class="box-title">Zon &amp; Maan</h3>
@@ -398,13 +394,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </div>
                 </div><!-- /.box-header -->
                 <div class="box-body">
-                  <ul class="products-list product-list-in-box weather-list">
+                  <ul class="products-list product-list-in-box current-weather weather-list">
                     <li class="item sunrise">
                       <div class="btn btn-default">
                       	<i class="wi wi-sunrise"></i>
                       </div>
                       <div class="weather-item">
-                        <a href="javascript::;" class="product-title">Zonsopkomst <span class="label label-success pull-right">05:12</span></a>
+                        <a href="javascript:;" class="product-title">Zonsopkomst <span class="label label-success pull-right">-</span></a>
                       </div>
                     </li><!-- /.item -->
                     <li class="item sunset">
@@ -412,26 +408,64 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       	<i class="wi wi-sunset"></i>
                       </div>
                       <div class="weather-item">
-                        <a href="javascript::;" class="product-title">Zonsondergang <span class="label label-warning pull-right">21:10</span></a>
+                        <a href="javascript:;" class="product-title">Zonsondergang <span class="label label-warning pull-right">-</span></a>
                       </div>
                     </li><!-- /.item -->
-                    <li class="item">
+                    <li class="item moon">
                       <div class="btn btn-default">
-                      	<i class="wi wi-moon-waxing-cresent-4"></i>
+                      	<i class="wi"></i>
                       </div>
                       <div class="weather-item">
-                        <a href="javascript::;" class="product-title">Maanstand <span class="label label-info pull-right">21:10</span></a>
+                        <a href="javascript:;" class="product-title">Maanstand <span class="label label-info pull-right">-</span></a>
                         <span class="product-description">
-                          Eerste kwartier
+                          ...
                         </span>
                       </div>
                     </li><!-- /.item -->
                   </ul>
                 </div><!-- /.box-body -->
+                
+				<div class="overlay loading">
+				  <i class="fa fa-refresh fa-spin"></i>
+				</div>
               </div>		  	
 		  	</div>
 		  			  
-		  	<div class="col-md-6 col-sm-12 col-xs-12">
+		  	<div class="col-md-3 col-sm-6 col-xs-12">
+			  <div class="box box-primary">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Vooruitzichten</h3>
+                  <div class="box-tools pull-right">
+                  </div>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                  <ul class="products-list product-list-in-box weather-list weather-forecast">
+                    <li class="item weather-forecast-day template">
+                      <div class="btn btn-default">
+                      	<i class="wi wi-day-showers"></i>
+                      </div>
+                      <div class="weather-item">
+                        <a href="javascript:;" class="product-title">
+                        	<span class="date">21-07-2015</span> 
+                        	<span class="label label-danger pull-right"><span class="temp_max">..</span> &deg;C</span>
+                        	<span class="label label-info pull-right"><span class="temp_min">..</span> &deg;C</span>
+                        </a>
+                        <span class="product-description">
+                          <span class="weather-description"></span> / <span class="rain">4 mm</span> / <span class="wind">ZW 8</span>
+                        </span>
+                      </div>
+                    </li><!-- /.item -->
+                  </ul>
+                </div><!-- /.box-body -->
+                
+				<div class="overlay loading">
+				  <i class="fa fa-refresh fa-spin"></i>
+				</div>
+              </div>		  	
+		  	</div>
+		  			  
+		  			  
+		  	<div class="col-md-3 col-sm-12 hidden-xs  hidden-xs hidden-sm hidden-md hidden-lg">
 			  <div class="box box-secondary">
                 <div class="box-header with-border">
                   <h3 class="box-title">Logs</h3>
@@ -445,7 +479,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <img src="dist/img/default-50x50.gif" alt="Product Image">
                       </div>
                       <div class="product-info">
-                        <a href="javascript::;" class="product-title">Lights switched off <span class="label label-info pull-right">21:10</span></a>
+                        <a href="javascript:;" class="product-title">Lights switched off <span class="label label-info pull-right">21:10</span></a>
                         <span class="product-description">
                           Manually
                         </span>
@@ -456,7 +490,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <img src="dist/img/default-50x50.gif" alt="Product Image">
                       </div>
                       <div class="product-info">
-                        <a href="javascript::;" class="product-title">Intruder detection <span class="label label-danger pull-right">12:10</span></a>
+                        <a href="javascript:;" class="product-title">Intruder detection <span class="label label-danger pull-right">12:10</span></a>
                         <span class="product-description">
                           The fibaro sensor detected an intruder (or an earthquake)
                         </span>
@@ -467,7 +501,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <img src="dist/img/default-50x50.gif" alt="Product Image">
                       </div>
                       <div class="product-info">
-                        <a href="javascript::;" class="product-title">Domoticz updated <span class="label label-success pull-right">15:10</span></a>
+                        <a href="javascript:;" class="product-title">Domoticz updated <span class="label label-success pull-right">15:10</span></a>
                         <span class="product-description">
                           Domoticz updated to the latest version (2591)
                         </span>
@@ -476,8 +510,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </ul>
                 </div><!-- /.box-body -->
                 <div class="box-footer text-center">
-                  <a href="javascript::;" class="uppercase">View all logs</a>
+                  <a href="javascript:;" class="uppercase">View all logs</a>
                 </div><!-- /.box-footer -->
+				
+				<!-- Overlay is shown to disable element -->
+				<div class="overlay"></div>
               </div>		  	
 		  	
 		  	</div>
@@ -498,9 +535,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- Home tab content -->
           <div class="tab-pane active" id="control-sidebar-home-tab">
             <h3 class="control-sidebar-heading">Domoticz</h3>
-            <ul class='control-sidebar-menu'>
+            <ul class='control-sidebar-menu config-domoticz'>
               <li>
-                <a href='javascript::;'>
+                <a href='javascript:;'>
                   <i class="menu-icon fa fa-power-off bg-green"></i>
                   <div class="menu-info">
                     <h4 class="control-sidebar-subheading">Domoticz status</h4>
@@ -509,15 +546,29 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </a>
               </li>              
               <li>
-                <a href='javascript::;'>
+                <a href='javascript:;'>
                   <i class="menu-icon fa fa-refresh bg-red"></i>
                   <div class="menu-info">
-                    <h4 class="control-sidebar-subheading">Last updated</h4>
+                    <h4 class="control-sidebar-subheading">Laatste status</h4>
                     <p>10 seconds ago</p>
                   </div>
                 </a>
               </li>              
             </ul><!-- /.control-sidebar-menu -->
+
+            <h3 class="control-sidebar-heading">Weer</h3>
+            <ul class='control-sidebar-menu config-weather'>
+              <li>
+                <a href='javascript:;'>
+                  <i class="menu-icon fa fa-refresh bg-blue"></i>
+                  <div class="menu-info">
+                    <h4 class="control-sidebar-subheading">Laatste update</h4>
+                    <p class="lastUpdate">3 minutes ago</p>
+                  </div>
+                </a>
+              </li>              
+            </ul><!-- /.control-sidebar-menu -->
+            
           </div><!-- /.tab-pane -->
           <!-- Stats tab content -->
           <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div><!-- /.tab-pane -->
@@ -567,9 +618,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
 	<script src="plugins/bootstrap-slider/bootstrap-slider.js" type="text/javascript"></script>
 	
 	<!-- Scripts to enable dashboard to be interactive -->
-	<script src="custom/js/domotica.js" type="text/javascript"></script>
+	<script src="custom/js/dashboard.js" type="text/javascript"></script>
 	<script src="custom/js/domoticz.js" type="text/javascript"></script>
 	<script src="custom/js/weather.js" type="text/javascript"></script>
-	          
+	<script src="custom/js/moon.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		$(function() { Domotica.dashboard.init(); });	
+	</script>
   </body>
 </html>

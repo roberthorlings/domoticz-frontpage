@@ -17,3 +17,7 @@
 .weather-list .weather-item { margin-left: 60px; }
 .weather-list .item { padding: 3px 0; }
 .weather-list .label { font-size: 120%; margin-left: 3px; }
+
+/* Weather forecast */
+.weather-forecast .template { display: none; }
+.weather-forecast .rain, .weather-forecast .wind { font-weight: bold; }
