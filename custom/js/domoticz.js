@@ -114,7 +114,7 @@ Domotica.domoticz = {
 	
 	// Basic method to send commands to Domoticz
 	call: function(type, parameters, callback) {
-		var url = "http://192.168.1.66:8080/json.htm";
+		var url = "http://192.168.178.21:8080/json.htm";
 		if( typeof( parameters) == "undefined" ) {
 			parameters = {};
 		}
