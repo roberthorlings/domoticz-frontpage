@@ -128,14 +128,10 @@ Domotica.weather = {
 	// a format useful for the user
 	translate: {
 		time: function(timestamp) {
-			var date = new Date(timestamp * 1000);
-			
-			return this.pad(date.getHours()) + ":" + this.pad(date.getMinutes()); 
+			return moment.unix(timestamp).format("HH:mm"); 
 		},
 		date: function(timestamp) {
-			var date = new Date(timestamp * 1000);
-			
-			return this.pad(date.getDate()) + "-" + this.pad(date.getMonth() + 1) + "-" + date.getFullYear(); 
+			return moment.unix(timestamp).format("D MMM YYYY"); 
 		},
 		
 		pad: function(n) {

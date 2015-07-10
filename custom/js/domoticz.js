@@ -98,7 +98,13 @@ Domotica.domoticz = {
 		
 		// Generic update method
 		generic: function(element, result) {
-			element.find( ".lastUpdate" ).text( "Laatste update: " + result.LastUpdate );
+			var textElement = element.find( ".lastUpdate" ); 
+			if( result.LastUpdate ) {
+				var lastUpdate = moment(result.LastUpdate);
+				textElement.text( lastUpdate.fromNow() );
+			} else {
+				textElement.text( "" );
+			}
 		},
 	},
 	

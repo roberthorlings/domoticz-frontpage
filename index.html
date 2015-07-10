@@ -35,6 +35,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Custom css -->
     <link href="./custom/css/domotica.css" rel="stylesheet" type="text/css" />
     
+    <!-- Android app manifest -->
+    <link rel="manifest" href="manifest.json">
   </head>
   <!--
   BODY TAG OPTIONS:
@@ -168,6 +170,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <li><a href="weather.html"><i class='wi wi-horizon'></i> <span>Weather</span></a></li>
             <li><a href="music.html"><i class='fa fa-music'></i> <span>Music</span></a></li>
             <li><a href="entertainment.html"><i class='fa fa-film'></i> <span>Entertainment</span></a></li>
+            <li class="spacer"><a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a></li>
+
           </ul><!-- /.sidebar-menu -->
         </section>
         <!-- /.sidebar -->
@@ -175,23 +179,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-          <h1>
-            Dashboard
-            <small>lampen en verwarming</small>
-          </h1>
-          <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Tablet</a></li>
-            <li class="active"><i class="fa fa-lightbulb-o"></i> Devices</li>
-          </ol>
-        </section>
-
         <!-- Main content -->
         <section class="content">
 
 		  <div class="row">
-            <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="col col-md-3 col-sm-6 col-xs-12">
               <div class="info-box bg-aqua switch dimmer-switch" data-domoticz-id="37" data-status="true">
                 <span class="info-box-icon"><i class="fa fa-lightbulb-o lightbulb-on"></i></span>
                 <div class="info-box-content">
@@ -201,7 +193,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div><!-- /.info-box-content -->
               </div><!-- /.info-box -->
             </div><!-- /.col -->
-            <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="col col-md-3 col-sm-6 col-xs-12">
               <div class="info-box bg-green switch" data-domoticz-id="18" data-status="false">
                 <span class="info-box-icon"><i class="fa fa-lightbulb-o"></i></span>
                 <div class="info-box-content">
@@ -215,7 +207,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div><!-- /.info-box-content -->
               </div><!-- /.info-box -->
             </div><!-- /.col -->
-            <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="col col-md-3 col-sm-6 col-xs-12">
               <div class="info-box bg-yellow switch" data-domoticz-id="16" data-status="false">
                 <span class="info-box-icon"><i class="fa fa-lightbulb-o"></i></span>
                 <div class="info-box-content">
@@ -229,7 +221,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div><!-- /.info-box-content -->
               </div><!-- /.info-box -->
             </div><!-- /.col -->
-            <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="col col-md-3 col-sm-6 col-xs-12">
               <div class="info-box bg-red switch disabled" data-domoticz-id="TODO" data-status="false">
                 <span class="info-box-icon"><i class="fa fa-lightbulb-o"></i></span>
                 <div class="info-box-content">
@@ -247,7 +239,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 		  <!-- Second row with information -->
 		  <div class="row">
-		  	<div class="col-md-3 col-sm-6 col-xs-12">
+		  	<div class="col col-md-4 col-sm-6 col-xs-12">
               <div class="info-box heater" data-domoticz-id="45">
                 <span class="info-box-icon bg-blue"><i class="ion ion-flame"></i></span>
                 <div class="info-box-content">
@@ -280,31 +272,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
               
 		  	</div>
 
-		  	<div class="col-md-3 col-sm-6 col-xs-12">
+		  	<div class="col col-md-4 col-sm-6 col-xs-12">
 			  <div class="box box-primary">
                 <div class="box-header with-border">
                   <h3 class="box-title">Buienradar</h3>
                 </div><!-- /.box-header -->
                 <div class="small-box-body">
-              		<img border="0" src="http://api.buienradar.nl/image/1.0/RadarMapNL?w=256&h=256">
+              		<img border="0" src="http://api.buienradar.nl/image/1.0/RadarMapNL?w=188&h=188">
               	</div>
               </div>
             </div>
-		  	<div class="col-md-3 col-sm-6 col-xs-12">
-			  <div class="box box-primary">
-                <div class="box-header with-border">
-                  <h3 class="box-title">Weeronline</h3>
-                </div><!-- /.box-header -->
-                <div class="small-box-body">
-			         <iframe 
-			         	src="http://www.weeronline.nl/Go/ExternalWidgetsNew/ThreeDaysCity?gid=4058223&sizeType=1&temperatureScale=Celsius&defaultSettings=False" 
-			         	width="235" height="216" frameborder="0" scrolling="no" style="border: none;" allowtransparency="true">
-			         </iframe>
- 	              	</div>
-              </div>
-            </div>
             
-		  	<div class="col-md-3 col-sm-6 hidden-xs">
+		  	<div class="col col-md-4 col-sm-6 hidden-xs">
               <div class="box info-box music media" data-domoticz-id="5">
                 <span class="info-box-icon bg-blue"><i class="fa fa-music"></i></span>
                 <div class="info-box-content">
@@ -331,7 +310,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 		  	</div>
 		  </div>            
 		  <div class="row">
-		  	<div class="col-md-3 col-sm-6 col-xs-12">
+		  	<div class="col col-md-4 col-sm-6 col-xs-12">
 			  <div class="box box-primary">
                 <div class="box-header with-border">
                   <h3 class="box-title">Weer</h3>
@@ -386,7 +365,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div>		  	
 		  	</div>
 
-		  	<div class="col-md-3 col-sm-6 col-xs-12">
+		  	<div class="col col-md-4 col-sm-6 col-xs-12">
 			  <div class="box box-primary">
                 <div class="box-header with-border">
                   <h3 class="box-title">Zon &amp; Maan</h3>
@@ -431,7 +410,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div>		  	
 		  	</div>
 		  			  
-		  	<div class="col-md-3 col-sm-6 col-xs-12">
+		  	<div class="col col-md-4 col-sm-6 col-xs-12">
 			  <div class="box box-primary">
                 <div class="box-header with-border">
                   <h3 class="box-title">Vooruitzichten</h3>
@@ -465,7 +444,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 		  	</div>
 		  			  
 		  			  
-		  	<div class="col-md-3 col-sm-12 hidden-xs  hidden-xs hidden-sm hidden-md hidden-lg">
+		  	<div class="col col-md-3 col-sm-12 hidden-xs  hidden-xs hidden-sm hidden-md hidden-lg">
 			  <div class="box box-secondary">
                 <div class="box-header with-border">
                   <h3 class="box-title">Logs</h3>
@@ -610,6 +589,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 	<!-- ChartJS 1.0.1 -->
     <script src="plugins/chartjs/Chart.min.js" type="text/javascript"></script>
     
+    <!--  Moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment-with-locales.min.js" type="text/javascript"></script>
 
     <!-- Optionally, you can add Slimscroll and FastClick plugins.
           Both of these plugins are recommended to enhance the

@@ -1,23 +1,46 @@
+/* Overrides for the default theme to fit nicely on a table screen */
+.info-box { min-height: 70px; }
+.info-box-icon { font-size: 30px; width: 45px; height: 70px; line-height: 70px; }
+.info-box-content { margin-left: 45px; padding-top: 3px; padding-bottom: 3px; }
+.info-box-text { font-size: 13px; }
+.info-box-number { font-size: 16px; }
+.info-box .progress { margin-top: 2px; margin-bottom: 2px; }
+.progress-description { font-size: 12px;  }
+.info-box, .box { margin-bottom: 7px; }
+div.col { padding-left: 8px; padding-right: 8px; }
+
+/* Hide the header */
+header { display: none; }
+.main-sidebar, .control-sidebar { padding-top: 0; }
+
+/* Change color on active menu item */
+section.sidebar .sidebar-menu>li.active>a { color: #0073b7; }
+.sidebar-menu li.spacer { margin-top: 1.5em; }
+
 .lightbulb-on {
 	color: yellow; 
 	font-size: 1.4em; line-height: 1.4em;
 }
 
 /* Make sure the horizontal slider only has a small bottom margin */
-.slider.slider-horizontal { margin-bottom: 15px; }
+.slider.slider-horizontal { margin-bottom: 0px; }
 
 /* Make sure all data is centered for the small boxes */
-.small-box-body { text-align: center; height: 256px;}
+.small-box-body { text-align: center; height: 188px;}
 
 /* Box of up-down buttons */
 .updown-buttons { margin-top: 5px; }
+.updown-buttons .btn { padding-top: 3px; padding-bottom: 3px; }
 
 /* List with weather information */
 .weather-list .btn-default { float: left; width: 48px; }
 .weather-list .weather-item { margin-left: 60px; }
 .weather-list .item { padding: 3px 0; }
-.weather-list .label { font-size: 120%; margin-left: 3px; }
+.weather-list .label { margin-left: 3px; padding-left: 0.4em; padding-right: 0.4em; }
 
 /* Weather forecast */
 .weather-forecast .template { display: none; }
 .weather-forecast .rain, .weather-forecast .wind { font-weight: bold; }
+
+/* Box headers */
+.box-header { padding: 6px 10px; }

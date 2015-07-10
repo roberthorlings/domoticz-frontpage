@@ -2,6 +2,9 @@ Domotica = {
 	// Initialization function
 	dashboard: {
 		init: function() {
+			// Set local for moment.js
+			moment.locale("nl");
+			
 			// Make sure the UI responds to user interaction
 			this.bindUIActions();
 			
