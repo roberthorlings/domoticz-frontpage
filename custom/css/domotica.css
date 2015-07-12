@@ -1,17 +1,19 @@
-/* Overrides for the default theme to fit nicely on a table screen */
-.info-box { min-height: 70px; }
-.info-box-icon { font-size: 30px; width: 45px; height: 70px; line-height: 70px; }
-.info-box-content { margin-left: 45px; padding-top: 3px; padding-bottom: 3px; }
-.info-box-text { font-size: 13px; }
-.info-box-number { font-size: 16px; }
-.info-box .progress { margin-top: 2px; margin-bottom: 2px; }
-.progress-description { font-size: 12px;  }
-.info-box, .box { margin-bottom: 7px; }
-div.col { padding-left: 8px; padding-right: 8px; }
-
-/* Hide the header */
-header { display: none; }
-.main-sidebar, .control-sidebar { padding-top: 0; }
+@media (min-width: 992px) and (max-width:1199px) {
+	/* Overrides for the default theme to fit nicely on a table screen */
+	.info-box { min-height: 70px; }
+	.info-box-icon { font-size: 30px; width: 45px; height: 70px; line-height: 70px; }
+	.info-box-content { margin-left: 45px; padding-top: 3px; padding-bottom: 3px; }
+	.info-box-text { font-size: 13px; }
+	.info-box-number { font-size: 16px; }
+	.info-box .progress { margin-top: 2px; margin-bottom: 2px; }
+	.progress-description { font-size: 12px;  }
+	.info-box, .box { margin-bottom: 7px; }
+	div.col { padding-left: 8px; padding-right: 8px; }
+	
+	/* Hide the header */
+	header { display: none; }
+	.main-sidebar, .control-sidebar { padding-top: 0; }
+}
 
 /* Change color on active menu item */
 section.sidebar .sidebar-menu>li.active>a { color: #0073b7; }
