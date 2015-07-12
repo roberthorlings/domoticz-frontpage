@@ -1,26 +1,15 @@
 {
-  "name": "almasaeed2010/adminlte",
-  "description": "AdminLTE - admin control panel and dashboard that's based on Bootstrap 3",
-  "homepage": "http://almsaeedstudio.com/",
+  "name": "roberthorlings/domoticz-frontpage",
+  "description": "Custom frontpage for ",
+  "homepage": "http://www.isdatsoftwareontwikkeling.nl/",
   "keywords": [
-    "css",
-    "js",
-    "less",
-    "responsive",
-    "back-end",
-    "template",
-    "theme",
+    "domoticz",
+    "frontpage",
+    "sonos",
+    "chromecast",
+    "dashboard",
+    "domotica"
     "web",
-    "admin"
-  ],
-  "authors": [
-    {
-      "name": "Abdullah Almsaeed",
-      "email": "support@almsaeedstudio.com"
-    }
   ],
   "license": "MIT",
-  "support": {
-    "issues": "https://github.com/almasaeed2010/AdminLTE/issues"
-  }
 }
