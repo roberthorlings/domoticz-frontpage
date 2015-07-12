@@ -29,7 +29,7 @@ Domotica.weather = {
 //			that.updateWidget.forecast(data);
 //		});
 		
-		this.call("forecast/daily", { cnt: 3}, function(data) {
+		this.call("forecast/daily", {cnt: 4}, function(data) {
 			that.updateWidget.dailyForecast(data);
 		});
 		
@@ -109,6 +109,10 @@ Domotica.weather = {
 			$( ".weather-forecast li:not(.template)" ).remove();
 			
 			$.each( data.list, function(idx, item) {
+				// Skip today in the forecasts
+				if( idx == 0 )
+					return;
+				
 				// Create a clone of the template
 				var element = template.clone().removeClass( "template" );
 				
