@@ -20,10 +20,6 @@ Domotica.weather = {
 			that.updateWidget.current(data);
 		});
 		
-//		this.call("forecast", {}, function(data) {
-//			that.updateWidget.forecast(data);
-//		});
-		
 		// Retrieve forecast for the given number of days (+1 as today is retrieved as well)
 		this.call("forecast/daily", {cnt: ( Domotica.settings.weather.daysToForecast + 1 )}, function(data) {
 			that.updateWidget.dailyForecast(data);

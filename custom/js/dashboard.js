@@ -16,8 +16,10 @@ Domotica = {
 		bindUIActions: function() {
 			Domotica.initialization.enableSwitches();
 			Domotica.initialization.enableHeaters();
-			Domotica.initialization.enableVolumeSliders();
 			Domotica.initialization.enableSunscreen();
+			
+			Domotica.sonos.initialize();
+			// Domotica.chromecast.initialize();
 		},
 		
 	},
@@ -82,21 +84,6 @@ Domotica = {
 			});
 		},
 	
-		// Enable volume
-		enableVolumeSliders: function() {
-			// Enable dimmer slider
-			$(".media .value-slider").slider({
-				min:0,
-				max:10,
-				handle: 'round'
-			});
-			
-			// Make sure changing the slider doesn't switch off the lights
-			$(".media .value-slider").on("click", function(e) {
-				return false;
-			});
-		},
-
 		// Enable sunscreen buttons
 		enableSunscreen: function() {
 			var sunscreen = $(".sunscreen");
@@ -143,6 +130,7 @@ Domotica = {
 		this.domoticz.update();
 		this.weather.update();
 		this.moon.update();
+		this.sonos.update();
 	},
 	
 };

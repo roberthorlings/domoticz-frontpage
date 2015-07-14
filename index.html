@@ -189,6 +189,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="info-box-content">
                   <span class="info-box-text">Lampen eettafel</span>
                   <span class="info-box-number domoticz-status">Aan</span>
+                  <div class="progress">
+                  </div>
           		  <div class="progress value-slider" id="lampen-eettafel-slider"></div>
                 </div><!-- /.info-box-content -->
               </div><!-- /.info-box -->
@@ -245,6 +247,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="info-box-content">
                   <span class="info-box-text">Verwarming zijraam</span>
                   <span class="info-box-number">12&deg;C</span>
+          		  <div class="progress"></div>
           		  <div class="pprogress value-slider" id="verwarming-zijraam-slider" data-slider-value="12"></div>
                 </div><!-- /.info-box-content -->
               </div><!-- /.info-box -->
@@ -254,6 +257,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="info-box-content">
                   <span class="info-box-text">Verwarming achterraam</span>
                   <span class="info-box-number">23&deg;C</span>
+          		  <div class="progress"></div>
           		  <div class="progress value-slider" id="verwarming-zijraam-slider" data-slider-value="23"></div>
                 </div><!-- /.info-box-content -->
               </div><!-- /.info-box -->
@@ -284,16 +288,25 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </div>
             
 		  	<div class="col col-md-4 col-sm-6 hidden-xs">
-              <div class="box info-box music media" data-domoticz-id="5">
+              <div class="box info-box bg-aqua music media" data-domoticz-id="5">
                 <span class="info-box-icon bg-blue"><i class="fa fa-music"></i></span>
                 <div class="info-box-content">
-                  <span class="info-box-text">Status: aan</span>
-                  <span class="info-box-number">Handel - Messiah ouverture</span>
+                	<div class="btn-group-horizontal pull-right music-controls">
+                      <button type="button" class="btn btn-default prev"><i class="fa fa-step-backward"></i></button>
+                      <button type="button" class="btn btn-default play"><i class="fa fa-play"></i></button>
+                      <button type="button" class="btn btn-default pause"><i class="fa fa-pause"></i></button>
+                      <button type="button" class="btn btn-default next"><i class="fa fa-step-forward"></i></button>
+                    </div>                  
+                
+                  <span class="info-box-text">...</span>
+                  <span class="info-box-number">...</span>
+          		  <div class="progress"></div>
           		  <div class="volume value-slider" id="music-volume-slider" data-slider-value="4"></div>
                 </div><!-- /.info-box-content -->
                 
-				<!-- Overlay is shown to disable element -->
-				<div class="overlay"></div>
+				<div class="overlay loading">
+				  <i class="fa fa-refresh fa-spin"></i>
+				</div>
               </div><!-- /.info-box -->
               
               <div class="box info-box television media" data-domoticz-id="6">
@@ -596,6 +609,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 	<script src="custom/js/domoticz.js" type="text/javascript"></script>
 	<script src="custom/js/weather.js" type="text/javascript"></script>
 	<script src="custom/js/moon.js" type="text/javascript"></script>
+	<script src="custom/js/sonos.js" type="text/javascript"></script>
 	<script type="text/javascript">
 		$(function() { Domotica.dashboard.init(); });	
 	</script>
