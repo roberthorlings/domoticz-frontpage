@@ -3,25 +3,22 @@ Domotica.moon = {
 	// Variable to store the interval
 	interval: null,
 	
-	// Default update frequency in ms.
-	updateFrequency: 12 * 60 * 60 * 1000,
-
 	// Main method for updating the status of all boxes 
 	// that are associated with the weather
 	update: function() {
-		var that = this;
+		var that = Domotica.moon;
 		
 		// If the system is waiting to update again, cancel the 
 		// interval. We will restart the interval again at the end
 		// of the meeting
-		if( this.interval ) {
-			clearInterval(this.interval);
+		if( that.interval ) {
+			clearInterval(that.interval);
 		}
 		
 		that.updateWidget();
 		
 		// Make sure to start updating again 
-		this.interval = setInterval(this.updateFrequency, this.update);
+		that.interval = setInterval(that.update, Domotica.settings.moon.updateFrequency);
 	},
 	
 	// Update moon information based on the current date 
@@ -30,6 +27,8 @@ Domotica.moon = {
 		var moonPhase = this.calculation.phase(today.getFullYear(), today.getMonth() + 1, today.getDate());
 		var description = this.translate.moonPhase.description(moonPhase);
 		var icon = this.translate.moonPhase.icon(moonPhase);
+		
+		console.log( "moon phase: ", moonPhase );
 		
 		$( ".moon .btn .wi" ).removeClass().addClass("wi").addClass(icon);
 		$( ".moon .product-description" ).text(description);

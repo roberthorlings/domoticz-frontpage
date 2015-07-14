@@ -2,26 +2,21 @@
 Domotica.domoticz = {
 	// Variable to store the interval
 	interval: null,
-	
-	// Default update frequency in ms.
-	// Please note that several boxes are updated
-	// when the user clicks on a button
-	updateFrequency: 10000,
 
 	// Main method for updating the status of all boxes 
 	// that are associated with dommoticz
 	update: function() {
-		var that = this;
+		var that = Domotica.domoticz;
 		
 		// If the system is waiting to update again, cancel the 
 		// interval. We will restart the interval again at the end
 		// of the meeting
-		if( this.interval ) {
-			clearInterval(this.interval);
+		if( that.interval ) {
+			clearInterval(that.interval);
 		}
 		
 		// Handle updates
-		this.call("devices", { plan: 2 }, function(data) {
+		that.call("devices", { plan: Domotica.settings.domoticz.plan }, function(data) {
 			// For now, only handle 'results' part
 			$.each(data.result, function(idx, result) {
 				var id = result.idx;
@@ -48,7 +43,7 @@ Domotica.domoticz = {
 		// TODO: Update 'last updated' date
 		
 		// Make sure to start updating again 
-		this.interval = setInterval(this.updateFrequency, this.update);
+		that.interval = setInterval(that.update, Domotica.settings.domoticz.updateFrequency);
 	},
 	
 	change: {
@@ -120,7 +115,6 @@ Domotica.domoticz = {
 	
 	// Basic method to send commands to Domoticz
 	call: function(type, parameters, callback) {
-		var url = "http://192.168.178.21:8080/json.htm";
 		if( typeof( parameters) == "undefined" ) {
 			parameters = {};
 		}
@@ -129,7 +123,7 @@ Domotica.domoticz = {
 		parameters.type = type;
 		
 		// Actually do the call and call the callback
-		$.get( url, parameters, function(data, textStatus, jqXHR) {
+		$.get( Domotica.settings.domoticz.baseUrl, parameters, function(data, textStatus, jqXHR) {
 			if( typeof(callback) != "undefined" ) {
 				callback(data);
 			}

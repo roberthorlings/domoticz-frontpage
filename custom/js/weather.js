@@ -2,25 +2,20 @@
 Domotica.weather = {
 	// Variable to store the interval
 	interval: null,
-	
-	// Default update frequency in ms.
-	// Please note that several boxes are updated
-	// when the user clicks on a button
-	updateFrequency: 30 * 60 * 1000,
 
 	// Main method for updating the status of all boxes 
 	// that are associated with the weather
 	update: function() {
-		var that = this;
+		var that = Domotica.weather;
 		
 		// If the system is waiting to update again, cancel the 
 		// interval. We will restart the interval again at the end
 		// of the meeting
-		if( this.interval ) {
-			clearInterval(this.interval);
+		if( that.interval ) {
+			clearInterval(that.interval);
 		}
 		
-		// Handle updates
+		// Handle updates to todays weather
 		this.call("weather", {}, function(data) {
 			that.updateWidget.current(data);
 		});
@@ -29,12 +24,13 @@ Domotica.weather = {
 //			that.updateWidget.forecast(data);
 //		});
 		
-		this.call("forecast/daily", {cnt: 4}, function(data) {
+		// Retrieve forecast for the given number of days (+1 as today is retrieved as well)
+		this.call("forecast/daily", {cnt: ( Domotica.settings.weather.daysToForecast + 1 )}, function(data) {
 			that.updateWidget.dailyForecast(data);
 		});
 		
 		// Make sure to start updating again 
-		this.interval = setInterval(this.updateFrequency, this.update);
+		that.interval = setInterval(that.update, Domotica.settings.weather.updateFrequency);
 	},
 	
 	// Methods to update widgets on the screen, based on 
@@ -318,14 +314,14 @@ Domotica.weather = {
 	
 	// Basic method to retrieve weather information
 	call: function(method, parameters, callback) {
-		var url = "http://api.openweathermap.org/data/2.5/" + method;
+		var url = Domotica.settings.weather.baseUrl + method;
 
 		if( typeof( parameters) == "undefined" ) {
 			parameters = {};
 		}
 		
-		// City ID of Houten
-		parameters.id = 2753557;
+		// City ID 
+		parameters.id = Domotica.settings.weather.cityId;
 		
 		// Metric units and Dutch language
 		parameters.units = "metric";
