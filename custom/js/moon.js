@@ -72,7 +72,7 @@ Domotica.moon = {
 					'Wassende maanbol',
 					'Wassende maanbol',
 					'Wassende maanbol',
-					'Volle maan',
+					'Wassende maanbol',
 					'Volle maan',
 					'Afnemende maanbol',
 					'Afnemende maanbol',
@@ -87,7 +87,7 @@ Domotica.moon = {
 					'Afnemende maansikkel',
 					'Afnemende maansikkel',
 					'Afnemende maansikkel',
-					'Nieuwe maan',
+					'Afnemende maansikkel',
 				];
 				
 				return descriptions[ phase % descriptions.length ];
@@ -109,7 +109,7 @@ Domotica.moon = {
 					'wi-moon-waxing-gibbous-4',
 					'wi-moon-waxing-gibbous-5',
 					'wi-moon-waxing-gibbous-6',
-					'wi-moon-full',
+					'wi-moon-waxing-gibbous-6',
 					'wi-moon-full',
 					'wi-moon-waning-gibbous-1',
 					'wi-moon-waning-gibbous-2',
@@ -124,7 +124,7 @@ Domotica.moon = {
 					'wi-moon-waning-crescent-4',
 					'wi-moon-waning-crescent-5',
 					'wi-moon-waning-crescent-6',
-					'wi-moon-new'
+					'wi-moon-waning-crescent-6',
 				];
 				
 				return icons[ phase % icons.length ];
