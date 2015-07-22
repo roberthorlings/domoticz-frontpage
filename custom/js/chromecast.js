@@ -1,5 +1,5 @@
-// Code to handle SONOS players
-Domotica.sonos = {
+// Code to handle Chromecast players
+Domotica.chromecast = {
 	// Variable to store the interval
 	interval: null,
 	
@@ -9,28 +9,28 @@ Domotica.sonos = {
 	// Initialize the Sonos widget
 	initialize: function() {
 		// Enable volume slider
-		var slider = $(".music .value-slider").slider({
+		var slider = $(".chromecast .value-slider").slider({
 			min:0,
 			max:100,
 			handle: 'round'
 		});
 		
 		slider.on("slideStop", function(e) {
-			Domotica.sonos.change.volume(e.value);
-			Domotica.sonos.update();
+			Domotica.chromecast.change.volume(e.value);
+			Domotica.chromecast.update();
 		});
 		
 		// Enable control buttons
-		$(".music .controls .play").on("click", Domotica.sonos.change.play);
-		$(".music .controls .pause").on("click", Domotica.sonos.change.pause);
-		$(".music .controls .next").on("click", Domotica.sonos.change.next);
-		$(".music .controls .prev").on("click", Domotica.sonos.change.previous);
+		$(".chromecast .controls .play").on("click", Domotica.chromecast.change.play);
+		$(".chromecast .controls .pause").on("click", Domotica.chromecast.change.pause);
+		$(".chromecast .controls .next").on("click", Domotica.chromecast.change.next);
+		$(".chromecast .controls .prev").on("click", Domotica.chromecast.change.previous);
 	},
 	
 	// Main method for updating the status of all boxes 
 	// that are associated with the sonos data
 	update: function() {
-		var that = Domotica.sonos;
+		var that = Domotica.chromecast;
 		
 		// If the system is waiting to update again, cancel the 
 		// interval. We will restart the interval again at the end
@@ -40,14 +40,20 @@ Domotica.sonos = {
 		}
 		
 		// Handle updates to todays weather
-		that.query("status", {}, function(data) {
+		that.query("fullstatus", {}, function(data) {
 			that.updateWidget.status(data);
 			
 			// Make sure to start updating again 
-			if( Domotica.sonos.currentStatus == "PLAYING" || Domotica.sonos.currentStatus == "TRANSITIONING" ) {
-				updateFrequency = Domotica.settings.sonos.updateFrequencyWhilePlaying;
+			if( Domotica.chromecast.currentStatus == "PLAYING" || Domotica.chromecast.currentStatus == "UNKNOWN" ) {
+				updateFrequency = Domotica.settings.chromecast.updateFrequencyWhilePlaying;
 			} else {
-				updateFrequency = Domotica.settings.sonos.updateFrequencyWhileStopped;
+				updateFrequency = Domotica.settings.chromecast.updateFrequencyWhileStopped;
+			}
+
+			// If there is an interval waiting, clear the interval first, to prevent 
+			// many updates at once
+			if( that.interval ) {
+				clearInterval(that.interval);
 			}
 			
 			that.interval = setInterval(that.update, updateFrequency);
@@ -59,23 +65,23 @@ Domotica.sonos = {
 	// data from weather station
 	updateWidget: {
 		status: function(data) {
-			var element = $(".music");
+			var element = $(".chromecast");
 			
 			// Store status in cache
-			Domotica.sonos.currentStatus = data.state.name;
+			Domotica.chromecast.currentStatus = Domotica.chromecast.translate.status(data);
 			
-			switch(data.state.name) {
+			switch(Domotica.chromecast.currentStatus) {
 				case "PLAYING":
-					this.updateTrack(element, data.state);
-					this.setIcon(element, "fa-music");
+					this.updateTrack(element, data);
+					this.setIcon(element, "fa-ios-film-outline");
 					
 					// Update controls
 					element.find( ".controls .play" ).hide();
 					element.find( ".controls .pause" ).show();
 					
 					break;
-				case "PAUSED_PLAYBACK":
-					this.updateTrack(element, data.state);
+				case "PAUSED":
+					this.updateTrack(element, data);
 					this.setIcon(element, "fa-pause");
 					
 					// Update controls
@@ -84,6 +90,7 @@ Domotica.sonos = {
 					
 					break;
 				case "STOPPED":
+				case "IDLE":
 					this.updateTrack(element, null);
 					this.setIcon(element, "fa-stop");
 					
@@ -95,10 +102,10 @@ Domotica.sonos = {
 			}
 			
 			// Update albumart
-			this.updateAlbumArt(element, data.state);
+			this.updateAlbumArt(element, data.media);
 			
 			// Update volume control
-			Domotica.ui.setSliderValue(element, data.volume.level);
+			Domotica.ui.setSliderValue(element, data.cast.volume_level * 100 );
 			
 			// Hide the loading spinner
 			element.find( ".loading" ).remove();
@@ -108,29 +115,29 @@ Domotica.sonos = {
 			element.find(".info-box-icon i").removeClass().addClass("fa").addClass(icon);
 		},
 		updateTrack: function(element, state) {
-			element.find( ".info-box-text" ).text( state ? state.details.artist : "Gestopt" );
-			element.find( ".info-box-number" ).text( state ? state.details.title : "." );
+			element.find( ".info-box-text" ).text( (state && state.cast && state.cast.display_name) ? state.cast.display_name : "Gestopt" );
+			element.find( ".info-box-number" ).text( (state && state.media && state.media.media_metadata && state.media.media_metadata.title) ? state.media.media_metadata.title : "." );
 			
 			var progress
-			if( state ) {
-				progress = Domotica.sonos.translate.progress(state.details.position, state.details.duration);
+			if( state && state.media && state.media.current_time ) {
+				progress = Domotica.chromecast.translate.progress(state.media.current_time, state.media.duration);
 			} else {
 				progress = 0;
 			}
 			
 			var progressBar = element.find( ".progress" ).empty();
 			
-			if(state) {
+			if(progress) {
 				progressBar.append(
 						$("<div>").addClass( "progress-bar" ).css( "width", "" + Math.round( progress * 100 ) + "%" )
 				);
 			}
 		},
 		
-		updateAlbumArt: function(element, state) {
+		updateAlbumArt: function(element, media) {
 			var icon = element.find( ".info-box-icon" );
-			if( state.details && state.details.albumArt ) {
-				icon.css( "background-image", "url(" + state.details.albumArt + ")" );
+			if( media && media.media_metadata && media.media_metadata.images ) {
+				icon.css( "background-image", "url(" + media.media_metadata.images[0].url + ")" );
 				icon.addClass( "with-image" );
 			} else {
 				icon.css( "background-image", "none" );
@@ -142,28 +149,23 @@ Domotica.sonos = {
 	change: {
 		volume: function(newVolume) {
 			// Handle updates to todays weather
-			var that = Domotica.sonos;
+			var that = Domotica.chromecast;
 			that.execute("volume", {volume: newVolume}, that.update);
 		},
 		
 		play: function() {
-			var that = Domotica.sonos;
+			var that = Domotica.chromecast;
 			that.execute("play", {}, that.update);
 		},
 		
 		pause: function() {
-			var that = Domotica.sonos;
+			var that = Domotica.chromecast;
 			that.execute("pause", {}, that.update);
 		},
 		
 		next: function() {
-			var that = Domotica.sonos;
-			that.execute("next", {}, that.update);
-		},
-		
-		previous: function() {
-			var that = Domotica.sonos;
-			that.execute("previous", {}, that.update);
+			var that = Domotica.chromecast;
+			that.execute("skip", {}, that.update);
 		},
 	},
 	
@@ -171,16 +173,11 @@ Domotica.sonos = {
 	// a format useful for the user
 	translate: {
 		progress: function( position, duration ) {
-			var positionSeconds = this.getSecondsFromTime(position);
-			var durationSeconds = this.getSecondsFromTime(duration);
-			
-			return positionSeconds / durationSeconds;
+			return position / duration;
 		},
-		
-		getSecondsFromTime(time) {
-			return time.substr(0, 1) * 3600 + time.substr(2, 2) * 60 + time.substr(5, 2) * 1;
+		status: function(data) {
+			return (data && data.media && data.media.player_state) ? data.media.player_state : "STOPPED";
 		}
-	
 	},
 	
 	query: function(method, parameters, callback) {
@@ -193,7 +190,7 @@ Domotica.sonos = {
 	
 	// Basic method to send data to the webinterface
 	call: function(ajaxFunc, method, parameters, callback) {
-		var url = Domotica.settings.sonos.baseUrl + "/" + method;
+		var url = Domotica.settings.chromecast.baseUrl + "/" + method;
 
 		if( typeof( parameters) == "undefined" ) {
 			parameters = {};

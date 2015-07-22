@@ -1,23 +1,12 @@
-@media (min-width: 992px) and (max-width:1199px) {
-	/* Overrides for the default theme to fit nicely on a table screen */
-	.info-box { min-height: 70px; }
-	.info-box-icon { font-size: 30px; width: 45px; height: 70px; line-height: 70px; }
-	.info-box-content { margin-left: 45px; padding-top: 3px; padding-bottom: 3px; }
-	.info-box-text { font-size: 13px; }
-	.info-box-number { font-size: 16px; }
-	.info-box .progress { margin-top: 2px; margin-bottom: 2px; }
-	.progress-description { font-size: 12px;  }
-	.info-box, .box { margin-bottom: 7px; }
-	div.col { padding-left: 8px; padding-right: 8px; }
-	
-	/* Hide the header */
-	header { display: none; }
-	.main-sidebar, .control-sidebar { padding-top: 0; }
-}
-
 /* Change color on active menu item */
 section.sidebar .sidebar-menu>li.active>a { color: #0073b7; }
 .sidebar-menu li.spacer { margin-top: 1.5em; }
+
+.wrapper .content div.col-outer { padding-left: 0; padding-right: 0; } 
+
+/* Enable weather icons in sidebar menu */
+.sidebar-menu > li > a > .wi { width: 20px; }
+
 
 .lightbulb-on {
 	color: yellow; 
@@ -29,7 +18,7 @@ section.sidebar .sidebar-menu>li.active>a { color: #0073b7; }
 
 /* Make sure all data is centered for the small boxes */
 .small-box-body { text-align: center; height: 188px;}
-
+.medium-box-body { text-align: center; height: 258px;}
 /* Box of up-down buttons */
 .updown-buttons { margin-top: 5px; }
 .updown-buttons .btn { padding-top: 3px; padding-bottom: 3px; }
@@ -46,3 +35,13 @@ section.sidebar .sidebar-menu>li.active>a { color: #0073b7; }
 
 /* Box headers */
 .box-header { padding: 6px 10px; }
+
+/* Info box number overflow */
+.info-box-number {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  height: 26px;
+}
+.media .info-box-icon.with-image i { display: none; }
+.media .info-box-icon.with-image { background-size: 80% auto; background-repeat: no-repeat; background-position: center center; }

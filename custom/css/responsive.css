@@ -1,0 +1,43 @@
+/* Overrides for the default theme to fit nicely on a table screen */
+@media (min-width: 992px) and (max-width:1199px) {
+	.dashboard .info-box { min-height: 70px; }
+	.dashboard .info-box-icon { font-size: 30px; width: 45px; height: 70px; line-height: 70px; }
+	.dashboard .info-box-content { margin-left: 45px; padding-top: 3px; padding-bottom: 3px; }
+	.dashboard .info-box-text { font-size: 13px; }
+	.dashboard .info-box-number { font-size: 16px; }
+	.dashboard .info-box .progress { margin-top: 2px; margin-bottom: 2px; }
+	.dashboard .progress-description { font-size: 12px;  }
+	.dashboard .info-box, .box { margin-bottom: 7px; }
+	.dashboard div.col { padding-left: 8px; padding-right: 8px; }
+	
+	/* Hide the header */
+	header { display: none; }
+	.main-sidebar, .control-sidebar { padding-top: 0; }
+}
+
+/* Overrides for the default theme to fit nicely on a smartphone screen */
+@media (max-width: 767px) {
+	.dashboard .info-box-number, .dashboard .progress, .dashboard .progress-description, .dashboard .slider { display: none; }
+	.dashboard .info-box-icon {  width: 100%; }
+	.dashboard .info-box-content { clear: left; margin-left: 0; text-align: center; }
+	.dashboard .generic-description { display: none; }
+	.dashboard div.col { padding-left: 8px; padding-right: 8px; }
+	
+	/* Convert vertical buttons back into horizontal buttons */
+	.btn { padding: 3px 6px; }
+	
+	/* Make sure the buttons fit on the screen */
+	.updown-buttons.btn-group {
+		display: inline-block!important;	
+	}
+	
+	/* Hide the title bar */
+	.main-header .logo { display: none; }
+}
+
+/* Pass spacer on header to the next sibling, as the header is hidden */
+@media (min-width: 768px) {
+	.sidebar-mini.sidebar-collapse .sidebar-menu li.spacer.header + li {
+		margin-top: 1.5em;
+	}
+}

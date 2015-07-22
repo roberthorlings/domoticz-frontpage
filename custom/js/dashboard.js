@@ -18,8 +18,11 @@ Domotica = {
 			Domotica.initialization.enableHeaters();
 			Domotica.initialization.enableSunscreen();
 			
-			Domotica.sonos.initialize();
-			// Domotica.chromecast.initialize();
+			if(Domotica.sonos)
+				Domotica.sonos.initialize();
+			
+			if(Domotica.chromecast)
+				Domotica.chromecast.initialize();
 		},
 		
 	},
@@ -127,10 +130,20 @@ Domotica = {
 	
 	// Generic update method to update everything
 	update: function() {
-		this.domoticz.update();
-		this.weather.update();
-		this.moon.update();
-		this.sonos.update();
+		if(this.domoticz)
+			this.domoticz.update();
+		
+		if(this.weather)
+			this.weather.update();
+		
+		if(this.moon)
+			this.moon.update();
+		
+		if(this.sonos)
+			this.sonos.update();
+		
+		if(this.chromecast)
+			this.chromecast.update();
 	},
 	
 };

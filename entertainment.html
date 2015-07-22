@@ -6,7 +6,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Weather Dashboard</title>
+    <title>Entertainment Dashboard</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     
     <!-- Bootstrap 3.3.4 -->
@@ -35,6 +35,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Custom css -->
     <link href="./custom/css/domotica.css" rel="stylesheet" type="text/css" />
     
+    <!-- Android app manifest -->
+    <link rel="manifest" href="manifest.json">
   </head>
   <!--
   BODY TAG OPTIONS:
@@ -164,12 +166,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <li><a href="index.html"><i class='fa fa-home'></i> <span>Home</span></a></li>
             <li class="header">Details</li>
             <!-- Optionally, you can add icons to the links -->
-            <li class="active"><a href="devices.html"><i class='fa fa-lightbulb-o'></i> <span>Domotica</span></a></li>
+            <li><a href="devices.html"><i class='fa fa-lightbulb-o'></i> <span>Domotica</span></a></li>
             <li><a href="weather.html"><i class='wi wi-horizon'></i> <span>Weer</span></a></li>
             <li><a href="music.html"><i class='fa fa-music'></i> <span>Muziek</span></a></li>
-            <li><a href="entertainment.html"><i class='fa fa-film'></i> <span>TV</span></a></li>
+            <li class="active"><a href="entertainment.html"><i class='fa fa-film'></i> <span>TV</span></a></li>
             <li class="config header spacer">Opties</li>
             <li class="config"><a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i> <span>Configuratie</span></a></li>
+
           </ul><!-- /.sidebar-menu -->
         </section>
         <!-- /.sidebar -->
@@ -177,117 +180,30 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-          <h1>
-            Domoticz devices
-            <small>lampen en verwarming</small>
-          </h1>
-          <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Tablet</a></li>
-            <li class="active"><i class="fa fa-lightbulb-o"></i> Devices</li>
-          </ol>
-        </section>
-
         <!-- Main content -->
         <section class="content">
 
-		  <div class="row">
-            <div class="col col-md-4 col-sm-6 col-xs-12">
-              <div class="info-box bg-aqua switch dimmer-switch" data-domoticz-id="37" data-status="true">
-                <span class="info-box-icon"><i class="fa fa-lightbulb-o lightbulb-on"></i></span>
-                <div class="info-box-content">
-                  <span class="info-box-text">Lampen eettafel</span>
-                  <span class="info-box-number domoticz-status">Aan</span>
-                  <div class="progress">
-                  </div>
-          		  <div class="progress value-slider" id="lampen-eettafel-slider"></div>
-                </div><!-- /.info-box-content -->
-              </div><!-- /.info-box -->
-            </div><!-- /.col -->
-            <div class="col col-md-4 col-sm-6 col-xs-12">
-              <div class="info-box bg-green switch" data-domoticz-id="18" data-status="false">
-                <span class="info-box-icon"><i class="fa fa-lightbulb-o"></i></span>
-                <div class="info-box-content">
-                  <span class="info-box-text">Lamp bank</span>
-                  <span class="info-box-number domoticz-status">Aan</span>
-                  <div class="progress">
-                  </div>
-                  <span class="progress-description lastUpdate">
-                    Sinds ....
-                  </span>
-                </div><!-- /.info-box-content -->
-              </div><!-- /.info-box -->
-            </div><!-- /.col -->
-            <div class="col col-md-4 col-sm-6 col-xs-12">
-              <div class="info-box bg-yellow switch" data-domoticz-id="16" data-status="false">
-                <span class="info-box-icon"><i class="fa fa-lightbulb-o"></i></span>
-                <div class="info-box-content">
-                  <span class="info-box-text">Lampen TV kast</span>
-                  <span class="info-box-number domoticz-status">Aan</span>
-                  <div class="progress">
-                  </div>
-                  <span class="progress-description lastUpdate">
-                    Sinds ....
-                  </span>
-                </div><!-- /.info-box-content -->
-              </div><!-- /.info-box -->
-            </div><!-- /.col -->
-            <div class="col col-md-4 col-sm-6 col-xs-12">
-              <div class="info-box bg-red switch disabled" data-domoticz-id="TODO" data-status="false">
-                <span class="info-box-icon"><i class="fa fa-lightbulb-o"></i></span>
-                <div class="info-box-content">
-                  <span class="info-box-text">Lampen keuken</span>
-                  <span class="info-box-number domoticz-status">Uit</span>
-                  <div class="progress">
-                  </div>
-                  <span class="progress-description lastUpdate">
-                    Sinds ....
-                  </span>
-                </div><!-- /.info-box-content -->
-              </div><!-- /.info-box -->
-            </div><!-- /.col -->
-          </div>
-
 		  <!-- Second row with information -->
 		  <div class="row">
-			<div class="col-md-4 col-sm-6 col-xs-12">
-              <div class="info-box heater" data-domoticz-id="45">
-                <span class="info-box-icon bg-blue"><i class="ion ion-flame"></i></span>
+		  	<div class="col col-md-6 col-sm-6 col-xs-12">
+              <div class="box info-box bg-yellow chromecast media">
+                <span class="info-box-icon">
+                	<i class="ion ion-ios-film-outline"></i>
+                	<img class="image" src="" />
+                </span>
                 <div class="info-box-content">
-                  <span class="info-box-text">Verwarming zijraam</span>
-                  <span class="info-box-number">12&deg;C</span>
+                  <span class="info-box-text">...</span>
+                  <span class="info-box-number">...</span>
           		  <div class="progress"></div>
-          		  <div class="pprogress value-slider" id="verwarming-zijraam-slider" data-slider-value="12"></div>
+          		  <div class="volume value-slider" id="tv-volume-slider" data-slider-value="6"></div>
                 </div><!-- /.info-box-content -->
-              </div><!-- /.info-box -->
-			</div>
-			<div class="col-md-4 col-sm-6 col-xs-12">
-              
-              <div class="info-box heater disabled" data-domoticz-id="TODO">
-                <span class="info-box-icon bg-yellow"><i class="ion ion-flame"></i></span>
-                <div class="info-box-content">
-                  <span class="info-box-text">Verwarming achterraam</span>
-                  <span class="info-box-number">23&deg;C</span>
-          		  <div class="progress"></div>
-          		  <div class="progress value-slider" id="verwarming-zijraam-slider" data-slider-value="23"></div>
-                </div><!-- /.info-box-content -->
-              </div><!-- /.info-box -->
-			</div>
-			<div class="col-md-4 col-sm-6 col-xs-12">
-              <div class="info-box sunscreen disabled" data-domoticz-id="TODO">
-                <span class="info-box-icon bg-green"><i class="wi wi-day-sunny"></i></span>
-                <div class="info-box-content">
-					<div class="btn-group-vertical pull-right updown-buttons">
-                      <button type="button" class="btn btn-default up"><i class="fa fa-chevron-up"></i></button>
-                      <button type="button" class="btn btn-default down"><i class="fa fa-chevron-down"></i></button>
-                    </div>                  
                 
-                  <span class="info-box-text">Zonnescherm</span>
-                </div><!-- /.info-box-content -->
+				<div class="overlay loading">
+				  <i class="fa fa-refresh fa-spin"></i>
+				</div>
               </div><!-- /.info-box -->
-			</div>
-		  </div>
+		  	</div>
+		  </div>            
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->
       
@@ -391,7 +307,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 	<!-- Scripts to enable dashboard to be interactive -->
 	<script src="custom/js/dashboard.js" type="text/javascript"></script>
 	<script src="custom/js/settings.js" type="text/javascript"></script>
-	<script src="custom/js/domoticz.js" type="text/javascript"></script>
+	<script src="custom/js/chromecast.js" type="text/javascript"></script>
 	<script type="text/javascript">
 		$(function() { Domotica.dashboard.init(); });	
 	</script>

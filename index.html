@@ -34,6 +34,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     
     <!-- Custom css -->
     <link href="./custom/css/domotica.css" rel="stylesheet" type="text/css" />
+    <link href="./custom/css/responsive.css" rel="stylesheet" type="text/css" />
     
     <!-- Android app manifest -->
     <link rel="manifest" href="manifest.json">
@@ -58,7 +59,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   |               | sidebar-mini                            |
   |---------------------------------------------------------|
   -->
-  <body class="skin-blue-light sidebar-mini sidebar-collapse">
+  <body class="skin-blue-light sidebar-mini sidebar-collapse dashboard">
     <div class="wrapper">
 
       <!-- Main Header -->
@@ -69,7 +70,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini">RL</span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg">Robert&amp;Lies</span>
+          <span class="logo-lg">Ons huis</span>
         </a>
 
         <!-- Header Navbar -->
@@ -164,13 +165,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- Sidebar Menu -->
           <ul class="sidebar-menu">
             <li class="active"><a href="index.html"><i class='fa fa-home'></i> <span>Home</span></a></li>
-            <li class="header">Options</li>
+            <li class="header">Details</li>
             <!-- Optionally, you can add icons to the links -->
-            <li><a href="devices.html"><i class='fa fa-lightbulb-o'></i> <span>Devices</span></a></li>
-            <li><a href="weather.html"><i class='wi wi-horizon'></i> <span>Weather</span></a></li>
-            <li><a href="music.html"><i class='fa fa-music'></i> <span>Music</span></a></li>
-            <li><a href="entertainment.html"><i class='fa fa-film'></i> <span>Entertainment</span></a></li>
-            <li class="spacer"><a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a></li>
+            <li><a href="devices.html"><i class='fa fa-lightbulb-o'></i> <span>Domotica</span></a></li>
+            <li><a href="weather.html"><i class='wi wi-horizon'></i> <span>Weer</span></a></li>
+            <li><a href="music.html"><i class='fa fa-music'></i> <span>Muziek</span></a></li>
+            <li><a href="entertainment.html"><i class='fa fa-film'></i> <span>TV</span></a></li>
+            <li class="config header spacer">Opties</li>
+            <li class="config"><a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i> <span>Configuratie</span></a></li>
 
           </ul><!-- /.sidebar-menu -->
         </section>
@@ -183,11 +185,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <section class="content">
 
 		  <div class="row">
-            <div class="col col-md-3 col-sm-6 col-xs-12">
+            <div class="col col-md-3 col-sm-6 col-xs-3">
               <div class="info-box bg-aqua switch dimmer-switch" data-domoticz-id="37" data-status="true">
                 <span class="info-box-icon"><i class="fa fa-lightbulb-o lightbulb-on"></i></span>
                 <div class="info-box-content">
-                  <span class="info-box-text">Lampen eettafel</span>
+                  <span class="info-box-text"><span class="generic-description">Lampen </span>eettafel</span>
                   <span class="info-box-number domoticz-status">Aan</span>
                   <div class="progress">
                   </div>
@@ -195,11 +197,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div><!-- /.info-box-content -->
               </div><!-- /.info-box -->
             </div><!-- /.col -->
-            <div class="col col-md-3 col-sm-6 col-xs-12">
+            <div class="col col-md-3 col-sm-6 col-xs-3">
               <div class="info-box bg-green switch" data-domoticz-id="18" data-status="false">
                 <span class="info-box-icon"><i class="fa fa-lightbulb-o"></i></span>
                 <div class="info-box-content">
-                  <span class="info-box-text">Lamp bank</span>
+                  <span class="info-box-text"><span class="generic-description">Lamp </span>bank</span>
                   <span class="info-box-number domoticz-status">Aan</span>
                   <div class="progress">
                   </div>
@@ -209,11 +211,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div><!-- /.info-box-content -->
               </div><!-- /.info-box -->
             </div><!-- /.col -->
-            <div class="col col-md-3 col-sm-6 col-xs-12">
+            <div class="col col-md-3 col-sm-6 col-xs-3">
               <div class="info-box bg-yellow switch" data-domoticz-id="16" data-status="false">
                 <span class="info-box-icon"><i class="fa fa-lightbulb-o"></i></span>
                 <div class="info-box-content">
-                  <span class="info-box-text">Lampen TV kast</span>
+                  <span class="info-box-text"><span class="generic-description">Lampen </span>TV kast</span>
                   <span class="info-box-number domoticz-status">Aan</span>
                   <div class="progress">
                   </div>
@@ -223,11 +225,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div><!-- /.info-box-content -->
               </div><!-- /.info-box -->
             </div><!-- /.col -->
-            <div class="col col-md-3 col-sm-6 col-xs-12">
+            <div class="col col-md-3 col-sm-6 col-xs-3">
               <div class="info-box bg-red switch disabled" data-domoticz-id="TODO" data-status="false">
                 <span class="info-box-icon"><i class="fa fa-lightbulb-o"></i></span>
                 <div class="info-box-content">
-                  <span class="info-box-text">Lampen keuken</span>
+                  <span class="info-box-text"><span class="generic-description">Lampen </span>keuken</span>
                   <span class="info-box-number domoticz-status">Uit</span>
                   <div class="progress">
                   </div>
@@ -241,42 +243,63 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 		  <!-- Second row with information -->
 		  <div class="row">
-		  	<div class="col col-md-4 col-sm-6 col-xs-12">
-              <div class="info-box heater" data-domoticz-id="45">
-                <span class="info-box-icon bg-blue"><i class="ion ion-flame"></i></span>
-                <div class="info-box-content">
-                  <span class="info-box-text">Verwarming zijraam</span>
-                  <span class="info-box-number">12&deg;C</span>
-          		  <div class="progress"></div>
-          		  <div class="pprogress value-slider" id="verwarming-zijraam-slider" data-slider-value="12"></div>
-                </div><!-- /.info-box-content -->
-              </div><!-- /.info-box -->
-              
-              <div class="info-box heater disabled" data-domoticz-id="TODO">
-                <span class="info-box-icon bg-yellow"><i class="ion ion-flame"></i></span>
-                <div class="info-box-content">
-                  <span class="info-box-text">Verwarming achterraam</span>
-                  <span class="info-box-number">23&deg;C</span>
-          		  <div class="progress"></div>
-          		  <div class="progress value-slider" id="verwarming-zijraam-slider" data-slider-value="23"></div>
-                </div><!-- /.info-box-content -->
-              </div><!-- /.info-box -->
-              
-              <div class="info-box sunscreen disabled" data-domoticz-id="TODO">
-                <span class="info-box-icon bg-green"><i class="wi wi-day-sunny"></i></span>
-                <div class="info-box-content">
-					<div class="btn-group-vertical pull-right updown-buttons">
-                      <button type="button" class="btn btn-default up"><i class="fa fa-chevron-up"></i></button>
-                      <button type="button" class="btn btn-default down"><i class="fa fa-chevron-down"></i></button>
-                    </div>                  
-                
-                  <span class="info-box-text">Zonnescherm</span>
-                </div><!-- /.info-box-content -->
-              </div><!-- /.info-box -->
-              
+		  	<div class="col col-outer col-md-4 col-sm-6 col-xs-12">
+		  		<div class="col col-md-12 col-sm-12 col-xs-4">
+	              <div class="info-box heater" data-domoticz-id="45">
+	                <span class="info-box-icon bg-blue"><i class="ion ion-flame"></i></span>
+	                <div class="info-box-content">
+	                  <span class="info-box-text"><span class="generic-description">Verwarming </span>zijraam</span>
+	                  <span class="info-box-number">12&deg;C</span>
+	          		  <div class="progress"></div>
+	          		  <div class="progress value-slider" id="verwarming-zijraam-slider" data-slider-value="12"></div>
+	          		  
+	                  	<div class="btn-group updown-buttons visible-xs">
+	                      <button type="button" class="btn btn-default up"><i class="fa fa-chevron-up"></i></button>
+	                      <button type="button" class="btn btn-default down"><i class="fa fa-chevron-down"></i></button>
+	                    </div>
+	          		  
+	                </div><!-- /.info-box-content -->
+	              </div><!-- /.info-box -->
+              	</div>
+		  		<div class="col col-md-12 col-sm-12 col-xs-4">
+	              <div class="info-box heater disabled" data-domoticz-id="TODO">
+	                <span class="info-box-icon bg-yellow"><i class="ion ion-flame"></i></span>
+	                <div class="info-box-content">
+	                  <span class="info-box-text"><span class="generic-description">Verwarming </span>achterraam</span>
+	                  <span class="info-box-number">23&deg;C</span>
+	          		  <div class="progress"></div>
+	          		  <div class="progress value-slider" id="verwarming-zijraam-slider" data-slider-value="23"></div>
+	          		  
+	                  	<div class="btn-group updown-buttons visible-xs">
+	                      <button type="button" class="btn btn-default up"><i class="fa fa-chevron-up"></i></button>
+	                      <button type="button" class="btn btn-default down"><i class="fa fa-chevron-down"></i></button>
+	                    </div>
+	          		  
+	                </div><!-- /.info-box-content -->
+	              </div><!-- /.info-box -->
+				</div>
+				<div class="col col-md-12 col-sm-12 col-xs-4">
+	              <div class="info-box sunscreen disabled" data-domoticz-id="TODO">
+	                <span class="info-box-icon bg-green"><i class="wi wi-day-sunny"></i></span>
+	                <div class="info-box-content">
+						<div class="btn-group-vertical pull-right updown-buttons hidden-xs">
+	                      <button type="button" class="btn btn-default up"><i class="fa fa-chevron-up"></i></button>
+	                      <button type="button" class="btn btn-default down"><i class="fa fa-chevron-down"></i></button>
+	                    </div>                  
+	                
+	                  <span class="info-box-text">Zonnescherm</span>
+	                  
+	                  	<div class="btn-group updown-buttons visible-xs">
+	                      <button type="button" class="btn btn-default up"><i class="fa fa-chevron-up"></i></button>
+	                      <button type="button" class="btn btn-default down"><i class="fa fa-chevron-down"></i></button>
+	                    </div>
+	                  
+	                </div><!-- /.info-box-content -->
+	              </div><!-- /.info-box -->
+				</div>              
 		  	</div>
 
-		  	<div class="col col-md-4 col-sm-6 col-xs-12">
+		  	<div class="col col-md-4 hidden-xs hidden-sm">
 			  <div class="box box-primary">
                 <div class="box-header with-border">
                   <h3 class="box-title">Buienradar</h3>
@@ -288,10 +311,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </div>
             
 		  	<div class="col col-md-4 col-sm-6 hidden-xs">
-              <div class="box info-box bg-aqua music media" data-domoticz-id="5">
-                <span class="info-box-icon bg-blue"><i class="fa fa-music"></i></span>
+              <div class="box info-box bg-aqua music media">
+                <span class="info-box-icon bg-blue">
+                	<i class="fa fa-music"></i>
+                	<img class="image" src="" />
+                </span>
                 <div class="info-box-content">
-                	<div class="btn-group-horizontal pull-right music-controls">
+                	<div class="btn-group-horizontal pull-right controls">
                       <button type="button" class="btn btn-default prev"><i class="fa fa-step-backward"></i></button>
                       <button type="button" class="btn btn-default play"><i class="fa fa-play"></i></button>
                       <button type="button" class="btn btn-default pause"><i class="fa fa-pause"></i></button>
@@ -309,23 +335,28 @@ scratch. This page gets rid of all links and provides the needed markup only.
 				</div>
               </div><!-- /.info-box -->
               
-              <div class="box info-box television media" data-domoticz-id="6">
-                <span class="info-box-icon bg-yellow"><i class="ion ion-ios-film-outline"></i></span>
+              <div class="box info-box bg-yellow chromecast media">
+                <span class="info-box-icon">
+                	<i class="ion ion-ios-film-outline"></i>
+                	<img class="image" src="" />
+                </span>
                 <div class="info-box-content">
-                  <span class="info-box-text">Status: uit</span>
+                  <span class="info-box-text">...</span>
                   <span class="info-box-number">...</span>
+          		  <div class="progress"></div>
           		  <div class="volume value-slider" id="tv-volume-slider" data-slider-value="6"></div>
                 </div><!-- /.info-box-content -->
                 
-				<!-- Overlay is shown to disable element -->
-				<div class="overlay"></div>
+				<div class="overlay loading">
+				  <i class="fa fa-refresh fa-spin"></i>
+				</div>
               </div><!-- /.info-box -->
 		  	</div>
 		  </div>            
 		  <div class="row">
 		  	<div class="col col-md-4 col-sm-6 col-xs-12">
 			  <div class="box box-primary">
-                <div class="box-header with-border">
+                <div class="box-header with-border hidden-xs">
                   <h3 class="box-title">Weer</h3>
                   <div class="box-tools pull-right">
                   </div>
@@ -345,7 +376,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </span>
                       </div>
                     </li><!-- /.item -->
-                    <li class="item weather-wind">
+                    <li class="item weather-wind hidden-xs">
                       <div class="btn btn-default">
                       	<i class="wi wi-beafort-5"></i>
                       </div>
@@ -353,7 +384,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <a href="javascript:;" class="product-title">Wind<span class="label label-success pull-right">-</span></a>
                       </div>
                     </li><!-- /.item -->
-                    <li class="item generic-weather">
+                    <li class="item generic-weather hidden-xs">
                       <div class="btn btn-default">
                       	<i class="fa fa-tint"></i>
                       </div>
@@ -370,7 +401,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div>		  	
 		  	</div>
 
-		  	<div class="col col-md-4 col-sm-6 col-xs-12">
+		  	<div class="col col-md-4 hidden-xs hidden-sm">
 			  <div class="box box-primary">
                 <div class="box-header with-border">
                   <h3 class="box-title">Zon &amp; Maan</h3>
@@ -417,7 +448,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 		  			  
 		  	<div class="col col-md-4 col-sm-6 col-xs-12">
 			  <div class="box box-primary">
-                <div class="box-header with-border">
+                <div class="box-header with-border hidden-xs">
                   <h3 class="box-title">Vooruitzichten</h3>
                   <div class="box-tools pull-right">
                   </div>
@@ -610,6 +641,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 	<script src="custom/js/weather.js" type="text/javascript"></script>
 	<script src="custom/js/moon.js" type="text/javascript"></script>
 	<script src="custom/js/sonos.js" type="text/javascript"></script>
+	<script src="custom/js/chromecast.js" type="text/javascript"></script>
 	<script type="text/javascript">
 		$(function() { Domotica.dashboard.init(); });	
 	</script>
