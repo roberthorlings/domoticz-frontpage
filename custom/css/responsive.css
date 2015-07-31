@@ -7,6 +7,7 @@
 	.dashboard .info-box-number { font-size: 16px; }
 	.dashboard .info-box .progress { margin-top: 2px; margin-bottom: 2px; }
 	.dashboard .progress-description { font-size: 12px;  }
+	
 	.dashboard .info-box, .box { margin-bottom: 7px; }
 	.dashboard div.col { padding-left: 8px; padding-right: 8px; }
 	
@@ -21,10 +22,9 @@
 	.dashboard .info-box-icon {  width: 100%; }
 	.dashboard .info-box-content { clear: left; margin-left: 0; text-align: center; }
 	.dashboard .generic-description { display: none; }
-	.dashboard div.col { padding-left: 8px; padding-right: 8px; }
 	
 	/* Convert vertical buttons back into horizontal buttons */
-	.btn { padding: 3px 6px; }
+	.btn { padding: 3px 8px; }
 	
 	/* Make sure the buttons fit on the screen */
 	.updown-buttons.btn-group {
@@ -34,6 +34,23 @@
 	/* Hide the title bar */
 	.main-header .logo { display: none; }
 }
+
+/* Decrease spacing between boxes */
+@media (max-width: 650px) {
+	.dashboard div.col { padding-left: 8px; padding-right: 8px; }
+	.dashboard .info-box, .dashboard .box { margin-bottom: 16px; }
+}
+@media (max-width: 550px) {
+	.dashboard div.col { padding-left: 5px; padding-right: 5px; }
+	.dashboard .info-box, .dashboard .box { margin-bottom: 10px; }
+	.dashboard .content { padding-top: 10px; padding-bottom: 10px;  }
+}
+@media (max-width: 450px) {
+	.dashboard div.col { padding-left: 3px; padding-right: 3px; }
+	.dashboard .info-box, .dashboard .box { margin-bottom: 6px; }
+	.dashboard .content { padding-top: 6px; padding-bottom: 6px; }
+}
+
 
 /* Pass spacer on header to the next sibling, as the header is hidden */
 @media (min-width: 768px) {
