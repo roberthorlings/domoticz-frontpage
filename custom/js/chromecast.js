@@ -25,6 +25,9 @@ Domotica.chromecast = {
 		$(".chromecast .controls .pause").on("click", Domotica.chromecast.change.pause);
 		$(".chromecast .controls .next").on("click", Domotica.chromecast.change.next);
 		$(".chromecast .controls .prev").on("click", Domotica.chromecast.change.previous);
+		
+		// Enable npo buttons
+		$(".btn.npo").on("click", Domotica.chromecast.change.npo);
 	},
 	
 	// Main method for updating the status of all boxes 
@@ -167,6 +170,12 @@ Domotica.chromecast = {
 			var that = Domotica.chromecast;
 			that.execute("skip", {}, that.update);
 		},
+		
+		npo: function() {
+			var that = Domotica.chromecast;
+			var channel = $(this).data( "channel" );
+			that.execute( "npo", { channel: channel }, that.update );
+		}
 	},
 	
 	// Translate values or words from the weather response into

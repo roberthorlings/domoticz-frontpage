@@ -45,3 +45,14 @@ section.sidebar .sidebar-menu>li.active>a { color: #0073b7; }
 }
 .media .info-box-icon.with-image i { display: none; }
 .media .info-box-icon.with-image { background-size: 80% auto; background-repeat: no-repeat; background-position: center center; }
+
+/* Entertainment */
+.btn.npo { 
+	padding: 3px;
+	margin: 0;
+	width: 100%;
+	height: auto; 
+}
+.btn.npo img {
+	height: 70px;
+}
