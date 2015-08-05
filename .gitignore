@@ -6,3 +6,6 @@ test.html
 .settings
 .buildpath
 custom/js/settings.js
+custom/img/user.jpg
+update.sh
+deploy.sh
