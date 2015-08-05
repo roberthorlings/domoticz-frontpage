@@ -8,6 +8,11 @@ Domotica.sonos = {
 
 	// Initialize the Sonos widget
 	initialize: function() {
+		if( !Domotica.settings.sonos ) {
+			console.log( "No sonos settings found. Please configure your sonos installation. See settings.example.js.");
+			return;
+		}
+		
 		// Enable volume slider
 		var slider = $(".music .value-slider").slider({
 			min:0,

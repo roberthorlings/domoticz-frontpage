@@ -8,6 +8,11 @@ Domotica.chromecast = {
 
 	// Initialize the Sonos widget
 	initialize: function() {
+		if( !Domotica.settings.chromecast ) {
+			console.log( "No chromecast settings found. Please configure your chromecast installation. See settings.example.js.");
+			return;
+		}
+		
 		// Enable volume slider
 		var slider = $(".chromecast .value-slider").slider({
 			min:0,
