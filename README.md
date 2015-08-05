@@ -13,8 +13,8 @@ sonos device works fine. Controlling the Chromecast device also works fine, but 
 * Add a rectangular user image to `custom/img/user.jpg`
 * Create a roomplan in Domoticz that contains all devices you want to see/control in the dashboard
 * Alter the boxes in the html pages to reflect your own setup
-** The `class` on a HTML box denotes the type of device. Currently supported types are `switch`, `dimmer-switch` and `heater`. 
-** The `data-domoticz-id` on the HTML box denotes the idx of the device in Domoticz to communicate with.
+  * The `class` on a HTML box denotes the type of device. Currently supported types are `switch`, `dimmer-switch` and `heater`. 
+  * The `data-domoticz-id` on the HTML box denotes the idx of the device in Domoticz to communicate with.
 
 ## Libraries used
 The frontpage is created using:
