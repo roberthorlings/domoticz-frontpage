@@ -28,8 +28,6 @@ Domotica.moon = {
 		var description = this.translate.moonPhase.description(moonPhase);
 		var icon = this.translate.moonPhase.icon(moonPhase);
 		
-		console.log( "moon phase: ", moonPhase );
-		
 		$( ".moon .btn .wi" ).removeClass().addClass("wi").addClass(icon);
 		$( ".moon .product-description" ).text(description);
 
