@@ -53,12 +53,31 @@ Domotica.domoticz = {
 		},
 		dimmerSwitch: function(id, value) {
 			console.log( "Update dimmer switch " + id + " to " + value );
+			Domotica.domoticz.call( "command", { param: "switchlight", idx: id, switchcmd: "Set Level", level: value } );
 		},
 		heater: function(id, value) {
 			console.log( "Update heater " + id + " to " + value );
+			Domotica.domoticz.call( "command", { param: "udevice", idx: id, nvalue: 0, svalue: value } );
 		},
 		sunscreen: function(id, status) {
 			console.log( "Update sunscreen " + id + " to " + status );
+			
+			var cmd = "";
+			switch( status ) {
+				case "up":
+					cmd = "Off";
+					break;
+				case "down":
+					cmd = "On";
+					break;					
+				case "stop":
+					cmd = "Stop";
+					break;		
+				default:
+					return;
+			}
+			
+			Domotica.domoticz.call( "command", { param: "switchlight", idx: id, level: 0, switchcmd: cmd } );
 		}
 	},
 	
