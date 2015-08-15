@@ -56,7 +56,7 @@ Domotica = {
 			});
 			
 			// Make sure changing the slider doesn't switch off the lights
-			$(".dimmer-switch .value-slider").on("click", function(e) {
+			$(".dimmer-switch .slider").on("click", function(e) {
 				return false;
 			});
 		},
@@ -82,7 +82,7 @@ Domotica = {
 			});
 			
 			// Make sure changing the slider doesn't switch off the lights
-			$(".heater .value-slider").on("click", function(e) {
+			$(".heater .slider").on("click", function(e) {
 				return false;
 			});
 		},
@@ -102,7 +102,6 @@ Domotica = {
 			sunscreen.find(".info-box-icon").on( "click", function() {
 				Domotica.domoticz.change.sunscreen(sunscreenId, "stop" );
 			});
-			
 		}
 	},
 
