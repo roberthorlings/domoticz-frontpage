@@ -103,8 +103,33 @@ Domotica.domoticz = {
 			this.generic(element, result);
 		},
 		heater: function(element, result) {
+			var setpoint = parseFloat(result.SetPoint);
+			
 			// Update the slider to show the dimmer value
-			Domotica.ui.setSliderValue(element, result.Level);
+			Domotica.ui.setSliderValue(element, setpoint);
+			
+			// Store current setpoint to enable buttons
+			element.find( ".btn-group" ).data( "setpoint", setpoint );
+			
+			// Update the temperature itself
+			element.find(".info-box-number" ).html(setpoint + " &deg;C");
+			
+			// Update color to indicate the temperature. 
+			if( Domotica.settings.domoticz.heaterColors ) {
+				var colorSettings = Domotica.settings.domoticz.heaterColors;
+				var color;
+				
+				if( setpoint <= colorSettings.low.temperature )
+					color = colorSettings.low.color;
+				
+				if( setpoint >= colorSettings.high.temperature )
+					color = colorSettings.high.color;
+
+				// Interpolate colors
+				var p = ( setpoint - colorSettings.low.temperature ) / ( colorSettings.high.temperature - colorSettings.low.temperature );
+				var hue = colorSettings.high.hue * p + colorSettings.low.hue * ( 1 - p );
+				element.find( ".info-box-number" ).css( "color", "hsl(" + hue + ", 100%, 50%)" );
+			}
 			
 			// Also do generic updating
 			this.generic(element, result);

@@ -66,8 +66,8 @@ Domotica = {
 			// Enable dimmer slider
 			$(".heater").each(function() {
 				var slider = $(this).find(".value-slider").slider({
-					min:10,
-					max:26,
+					min:12,
+					max:28,
 					step: 0.5,
 					handle: 'round',
 					value: 19
@@ -79,6 +79,21 @@ Domotica = {
 					Domotica.domoticz.change.heater(heaterId, e.value);
 					Domotica.domoticz.update();
 				});
+				
+				// Enable buttons
+				$(this).find( ".up" ).on( "click", function() {
+					var currentSetpoint = $(this).closest( ".btn-group" ).data( "setpoint" );
+					
+					if( currentSetpoint < 28 )
+						Domotica.domoticz.change.heater(heaterId, currentSetpoint + 1);
+				});
+				$(this).find( ".down" ).on( "click", function() {
+					var currentSetpoint = $(this).closest( ".btn-group" ).data( "setpoint" );
+					
+					if( currentSetpoint > 12 )
+						Domotica.domoticz.change.heater(heaterId, currentSetpoint - 1);
+				});
+				
 			});
 			
 			// Make sure changing the slider doesn't switch off the lights

@@ -33,6 +33,12 @@
 	
 	/* Hide the title bar */
 	.main-header .logo { display: none; }
+	
+	/* Show heater setpoint */
+	.heater .info-box-text { display: inline; }
+	.heater .info-box-number { display: inline; font-size: 0.7em; }
+	.heater .info-box-number:before { content: "(" }
+	.heater .info-box-number:after { content: ")" }
 }
 
 /* Decrease spacing between boxes */
