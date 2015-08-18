@@ -36,7 +36,6 @@ Domotica = {
 				var newStatus = !currentStatus;
 				
 				Domotica.domoticz.change.normalSwitch($(this).data("domoticz-id"), newStatus);
-				Domotica.domoticz.update();
 			});
 			
 			// Enable dimmer slider
@@ -51,7 +50,6 @@ Domotica = {
 				var dimmerId = $(this).data("domoticz-id");
 				slider.on("slideStop", function(e) {
 					Domotica.domoticz.change.dimmerSwitch(dimmerId, e.value);
-					Domotica.domoticz.update();
 				})
 			});
 			
@@ -77,7 +75,6 @@ Domotica = {
 				var heaterId = $(this).data("domoticz-id");
 				slider.on( "slideStop", function(e) {
 					Domotica.domoticz.change.heater(heaterId, e.value);
-					Domotica.domoticz.update();
 				});
 				
 				// Enable buttons

@@ -49,15 +49,15 @@ Domotica.domoticz = {
 	change: {
 		normalSwitch: function(id, status) {
 			console.log( "Update switch " + id + " to " + status );
-			Domotica.domoticz.call( "command", { param: "switchlight", idx: id, switchcmd: status ? "On" : "Off" } );
+			Domotica.domoticz.call( "command", { param: "switchlight", idx: id, switchcmd: status ? "On" : "Off" }, Domotica.domoticz.update );
 		},
 		dimmerSwitch: function(id, value) {
 			console.log( "Update dimmer switch " + id + " to " + value );
-			Domotica.domoticz.call( "command", { param: "switchlight", idx: id, switchcmd: "Set Level", level: value } );
+			Domotica.domoticz.call( "command", { param: "switchlight", idx: id, switchcmd: "Set Level", level: value }, Domotica.domoticz.update );
 		},
 		heater: function(id, value) {
 			console.log( "Update heater " + id + " to " + value );
-			Domotica.domoticz.call( "command", { param: "udevice", idx: id, nvalue: 0, svalue: value } );
+			Domotica.domoticz.call( "command", { param: "udevice", idx: id, nvalue: 0, svalue: value }, Domotica.domoticz.update );
 		},
 		sunscreen: function(id, status) {
 			console.log( "Update sunscreen " + id + " to " + status );
@@ -77,7 +77,7 @@ Domotica.domoticz = {
 					return;
 			}
 			
-			Domotica.domoticz.call( "command", { param: "switchlight", idx: id, level: 0, switchcmd: cmd } );
+			Domotica.domoticz.call( "command", { param: "switchlight", idx: id, level: 0, switchcmd: cmd }, Domotica.domoticz.update );
 		}
 	},
 	
