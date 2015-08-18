@@ -186,7 +186,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 		  <div class="row">
             <div class="col col-md-3 col-sm-6 col-xs-3">
-              <div class="info-box bg-aqua switch dimmer-switch" data-domoticz-id="37" data-status="false">
+              <div class="box info-box bg-aqua switch dimmer-switch" data-domoticz-id="37" data-status="false">
                 <span class="info-box-icon"><i class="fa fa-lightbulb-o lightbulb-on"></i></span>
                 <div class="info-box-content">
                   <span class="info-box-text"><span class="generic-description">Lampen </span>eettafel</span>
@@ -195,10 +195,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </div>
           		  <div class="progress value-slider" id="lampen-eettafel-slider"></div>
                 </div><!-- /.info-box-content -->
-              </div><!-- /.info-box -->
+				<div class="overlay loading">
+				  <i class="fa fa-refresh fa-spin"></i>
+				</div>  
+			  </div><!-- /.info-box -->
             </div><!-- /.col -->
             <div class="col col-md-3 col-sm-6 col-xs-3">
-              <div class="info-box bg-green switch" data-domoticz-id="18" data-status="false">
+              <div class="box info-box bg-green switch" data-domoticz-id="18" data-status="false">
                 <span class="info-box-icon"><i class="fa fa-lightbulb-o"></i></span>
                 <div class="info-box-content">
                   <span class="info-box-text"><span class="generic-description">Lamp </span>bank</span>
@@ -209,10 +212,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     Sinds ....
                   </span>
                 </div><!-- /.info-box-content -->
+				<div class="overlay loading">
+				  <i class="fa fa-refresh fa-spin"></i>
+				</div>                
               </div><!-- /.info-box -->
             </div><!-- /.col -->
             <div class="col col-md-3 col-sm-6 col-xs-3">
-              <div class="info-box bg-yellow switch" data-domoticz-id="16" data-status="false">
+              <div class="box info-box bg-yellow switch" data-domoticz-id="16" data-status="false">
                 <span class="info-box-icon"><i class="fa fa-lightbulb-o"></i></span>
                 <div class="info-box-content">
                   <span class="info-box-text"><span class="generic-description">Lampen </span>TV kast</span>
@@ -223,10 +229,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     Sinds ....
                   </span>
                 </div><!-- /.info-box-content -->
+				<div class="overlay loading">
+				  <i class="fa fa-refresh fa-spin"></i>
+				</div>                
               </div><!-- /.info-box -->
             </div><!-- /.col -->
             <div class="col col-md-3 col-sm-6 col-xs-3">
-              <div class="info-box bg-red switch disabled" data-domoticz-id="TODO" data-status="false">
+              <div class="box info-box bg-red switch disabled" data-domoticz-id="TODO" data-status="false">
                 <span class="info-box-icon"><i class="fa fa-lightbulb-o"></i></span>
                 <div class="info-box-content">
                   <span class="info-box-text"><span class="generic-description">Lampen </span>keuken</span>
@@ -237,6 +246,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     Sinds ....
                   </span>
                 </div><!-- /.info-box-content -->
+				<div class="overlay loading">
+				  <i class="fa fa-refresh fa-spin"></i>
+				</div>                
               </div><!-- /.info-box -->
             </div><!-- /.col -->
           </div>
@@ -245,11 +257,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 		  <div class="row">
 		  	<div class="col col-outer col-md-4 col-sm-6 col-xs-12">
 		  		<div class="col col-md-12 col-sm-12 col-xs-4">
-	              <div class="info-box heater" data-domoticz-id="45">
+	              <div class="box info-box heater" data-domoticz-id="45">
 	                <span class="info-box-icon bg-blue"><i class="ion ion-flame"></i></span>
 	                <div class="info-box-content">
-	                  <span class="info-box-text"><span class="generic-description">Verwarming </span>zijraam</span>
-	                  <span class="info-box-number">12&deg;C</span>
+	                  <span class="info-box-text"><span class="generic-description">Verwarming </span>zij<span class="generic-description">raam</span></span>
+	                  <span class="info-box-number">....</span><br class="visible-xs" />
 	          		  <div class="progress"></div>
 	          		  <div class="progress value-slider" id="verwarming-zijraam-slider" data-slider-value="12"></div>
 	          		  
@@ -259,14 +271,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
 	                    </div>
 	          		  
 	                </div><!-- /.info-box-content -->
-	              </div><!-- /.info-box -->
+
+					<div class="overlay loading">
+					  <i class="fa fa-refresh fa-spin"></i>
+					</div>
+				</div><!-- /.info-box -->
               	</div>
 		  		<div class="col col-md-12 col-sm-12 col-xs-4">
-	              <div class="info-box heater disabled" data-domoticz-id="60">
+	              <div class="box info-box heater disabled" data-domoticz-id="60">
 	                <span class="info-box-icon bg-yellow"><i class="ion ion-flame"></i></span>
 	                <div class="info-box-content">
-	                  <span class="info-box-text"><span class="generic-description">Verwarming </span>achterraam</span>
-	                  <span class="info-box-number">23&deg;C</span>
+	                  <span class="info-box-text"><span class="generic-description">Verwarming </span>achter<span class="generic-description">raam</span></span>
+	                  <span class="info-box-number">....</span><br class="visible-xs" />
 	          		  <div class="progress"></div>
 	          		  <div class="progress value-slider" id="verwarming-zijraam-slider" data-slider-value="23"></div>
 	          		  
@@ -276,6 +292,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 	                    </div>
 	          		  
 	                </div><!-- /.info-box-content -->
+	                
+					<div class="overlay loading">
+					  <i class="fa fa-refresh fa-spin"></i>
+					</div>	                
 	              </div><!-- /.info-box -->
 				</div>
 				<div class="col col-md-12 col-sm-12 col-xs-4">

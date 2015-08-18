@@ -35,6 +35,7 @@ section.sidebar .sidebar-menu>li.active>a { color: #0073b7; }
 
 /* Box headers */
 .box-header { padding: 6px 10px; }
+.info-box.box { border-top-width: 0;}
 
 /* Info box number overflow */
 .info-box-number {

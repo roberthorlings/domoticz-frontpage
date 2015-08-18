@@ -144,6 +144,9 @@ Domotica.domoticz = {
 			} else {
 				textElement.text( "" );
 			}
+			
+			// Hide the loading spinner
+			element.find( ".loading" ).remove();			
 		},
 	},
 	
