@@ -55,6 +55,8 @@
 	.dashboard div.col { padding-left: 3px; padding-right: 3px; }
 	.dashboard .info-box, .dashboard .box { margin-bottom: 6px; }
 	.dashboard .content { padding-top: 6px; padding-bottom: 6px; }
+	
+	.btn.npo img { height: 50px; }
 }
 
 

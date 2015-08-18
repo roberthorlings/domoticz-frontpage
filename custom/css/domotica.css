@@ -55,4 +55,13 @@ section.sidebar .sidebar-menu>li.active>a { color: #0073b7; }
 }
 .btn.npo img {
 	height: 70px;
+	width: auto;
+	margin: 10px auto;
 }
+
+.only-controls { 
+	padding: 5px 10px;
+	text-align: center;
+}
+
+.only-controls .controls { margin: 5px 0; }
