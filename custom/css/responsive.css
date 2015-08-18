@@ -19,6 +19,7 @@
 /* Overrides for the default theme to fit nicely on a smartphone screen */
 @media (max-width: 767px) {
 	.dashboard .info-box-number, .dashboard .progress, .dashboard .progress-description, .dashboard .slider { display: none; }
+	.dashboard .only-controls .slider { display: block; }
 	.dashboard .info-box-icon {  width: 100%; }
 	.dashboard .info-box-content { clear: left; margin-left: 0; text-align: center; }
 	.dashboard .generic-description { display: none; }
