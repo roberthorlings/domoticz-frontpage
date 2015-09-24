@@ -38,9 +38,16 @@ Domotica.weather = {
 			
 			// Update generic weather
 			$.each(data.main, function(idx, value) {
-				element.find( "li.generic-weather ." + idx).text(Math.round(value));
+				element.find( ".generic-temperature ." + idx).each(function(i, el) {
+					$el = $(el);
+					if( $el.hasClass( "intTemperature" ) ) {
+						$el.text(Math.round(value));	
+					} else {
+						$el.text(value);	
+					}
+				});
 			});
-			element.find( "li.generic-temperature .product-description").text(data.weather[0].description);
+			element.find( ".generic-temperature .product-description").text(data.weather[0].description);
 			
 			// Update wind
 			var windSpeed = Domotica.weather.translate.wind.speed(data.wind.speed);

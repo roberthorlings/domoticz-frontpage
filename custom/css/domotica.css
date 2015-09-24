@@ -19,6 +19,8 @@ section.sidebar .sidebar-menu>li.active>a { color: #0073b7; }
 /* Make sure all data is centered for the small boxes */
 .small-box-body { text-align: center; height: 188px;}
 .medium-box-body { text-align: center; height: 258px;}
+.centered-body { text-align: center; padding-top: 5px; padding-bottom: 5px; }
+
 /* Box of up-down buttons */
 .updown-buttons { margin-top: 5px; }
 .updown-buttons .btn { padding-top: 3px; padding-bottom: 3px; }

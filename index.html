@@ -319,13 +319,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
 				</div>              
 		  	</div>
 
-		  	<div class="col col-md-4 hidden-xs hidden-sm">
+		  	<div class="col col-md-4 col-sm-6 col-xs-12 temperature all-temperatures">
 			  <div class="box box-primary">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Buienradar</h3>
+                  <h3 class="box-title">Temperatuur</h3>
                 </div><!-- /.box-header -->
-                <div class="small-box-body">
-              		<img border="0" src="http://api.buienradar.nl/image/1.0/RadarMapNL?w=188&h=188">
+                <div class="centered-body">
+                	<div class="row">
+	                	<div class="col col-md-6 col-sm-6 col-xs-6 temperature"  data-domoticz-id="48">
+	              			Binnen: <span class="info-box-number"><span class="temperature"></span> &deg;C</span>
+						</div>
+						<div class="col col-md-6 col-sm-6 col-xs-6 current-weather">
+	              			<span class="generic-temperature">
+	              				Buiten <span class="info-box-number"><span class="temp"></span> &deg;C</span>
+	              			</span>
+						</div>
+					</div>
               	</div>
               </div>
             </div>
@@ -389,7 +398,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       </div>
                       <div class="weather-item">
                         <a href="javascript:;" class="product-title">Weer vandaag 
-                        	<span class="label label-info pull-right"><span class="temp">..</span> &deg;C</span>
+                        	<span class="label label-info pull-right"><span class="temp intTemperature">..</span> &deg;C</span>
                         </a>
                         <span class="product-description">
                           ..

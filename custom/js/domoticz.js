@@ -34,6 +34,8 @@ Domotica.domoticz = {
 					that.updateWidget.normalSwitch(element, result);
 				} else if(element.hasClass("heater")) {
 					that.updateWidget.heater(element, result);
+				} else if(element.hasClass("temperature")) {
+					that.updateWidget.temperature(element, result);
 				} else {
 					that.updateWidget.generic(element, result);
 				}
@@ -135,6 +137,16 @@ Domotica.domoticz = {
 			this.generic(element, result);
 		},
 		
+		temperature: function(element, result) {
+			var temperature = result.Temp;
+			
+			// Update the temperature itself
+			element.find(".temperature" ).html(temperature);
+			
+			// Also do generic updating
+			this.generic(element, result);
+		},
+
 		// Generic update method
 		generic: function(element, result) {
 			var textElement = element.find( ".lastUpdate" ); 

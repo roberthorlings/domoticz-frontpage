@@ -35,6 +35,10 @@
 	/* Hide the title bar */
 	.main-header .logo { display: none; }
 	
+	/* Show temperatures in all-temperatures widget */
+	.all-temperatures .info-box-number { display: block; }
+	.all-temperatures .box-header { display: none; }
+
 	/* Show heater setpoint */
 	.heater .info-box-text { display: inline; }
 	.heater .info-box-number { display: inline; font-size: 0.7em; }
