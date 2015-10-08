@@ -99,7 +99,7 @@ Domotica.domoticz = {
 			element.find(".domoticz-status" ).text(status);
 			
 			// Update the lightbulb
-			Domotica.ui.toggleSwitch(element, result.Status == "On");
+			Domotica.ui.toggleSwitch(element, result.Status == "On" || result.Status.startsWith( "Set level" ) );
 			
 			// Also do generic updating
 			this.generic(element, result);
