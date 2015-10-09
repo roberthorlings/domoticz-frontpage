@@ -10,10 +10,23 @@
 	
 	.dashboard .info-box, .box { margin-bottom: 7px; }
 	.dashboard div.col { padding-left: 8px; padding-right: 8px; }
-	
+
+	.dashboard .scene { height: 70px; }
+	.dashboard .scene i.fa {
+		font-size: 30px;
+		line-height: 40px;
+		margin-top: 2px; 
+	}
+
 	/* Hide the header */
 	header { display: none; }
 	.main-sidebar, .control-sidebar { padding-top: 0; }
+	
+	.scene .description { font-size: 15px; }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+	.scene .description { font-size: 15px; }
 }
 
 /* Overrides for the default theme to fit nicely on a smartphone screen */
@@ -44,24 +57,28 @@
 	.heater .info-box-number { display: inline; font-size: 0.7em; }
 	.heater .info-box-number:before { content: "(" }
 	.heater .info-box-number:after { content: ")" }
+	
+	.scenes { margin-bottom: 16px; }
 }
 
 /* Decrease spacing between boxes */
 @media (max-width: 650px) {
 	.dashboard div.col { padding-left: 8px; padding-right: 8px; }
-	.dashboard .info-box, .dashboard .box { margin-bottom: 16px; }
+	.dashboard .info-box, .dashboard .box, .dashboard .scenes { margin-bottom: 16px; }
 }
 @media (max-width: 550px) {
 	.dashboard div.col { padding-left: 5px; padding-right: 5px; }
-	.dashboard .info-box, .dashboard .box { margin-bottom: 10px; }
+	.dashboard .info-box, .dashboard .box, .dashboard .scenes { margin-bottom: 10px; }
 	.dashboard .content { padding-top: 10px; padding-bottom: 10px;  }
 }
 @media (max-width: 450px) {
 	.dashboard div.col { padding-left: 3px; padding-right: 3px; }
-	.dashboard .info-box, .dashboard .box { margin-bottom: 6px; }
+	.dashboard .info-box, .dashboard .box, .dashboard .scenes { margin-bottom: 6px; }
 	.dashboard .content { padding-top: 6px; padding-bottom: 6px; }
 	
 	.btn.npo img { height: 50px; }
+	
+	.scene .description { font-size: 15px; }
 }
 
 

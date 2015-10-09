@@ -37,7 +37,8 @@ section.sidebar .sidebar-menu>li.active>a { color: #0073b7; }
 
 /* Box headers */
 .box-header { padding: 6px 10px; }
-.info-box.box { border-top-width: 0;}
+.info-box.box { border-top-width: 0; }
+.box { margin-bottom: 15px; }
 
 /* Info box number overflow */
 .info-box-number {
@@ -68,3 +69,21 @@ section.sidebar .sidebar-menu>li.active>a { color: #0073b7; }
 }
 
 .only-controls .controls { margin: 5px 0; }
+
+.scenes { margin-bottom: 15px; }
+
+.scene {
+    height: 90px;
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+.scene i.fa {
+	font-size: 40px;
+	line-height: 55px;
+	margin-top: 5px; 
+}
+.scene .description {
+	font-size: 18px;
+	display: block;
+}

@@ -80,6 +80,10 @@ Domotica.domoticz = {
 			}
 			
 			Domotica.domoticz.call( "command", { param: "switchlight", idx: id, level: 0, switchcmd: cmd }, Domotica.domoticz.update );
+		},
+		scene: function(id, status) {
+			console.log( "Setting scene " + id + " to " + status );
+			Domotica.domoticz.call( "command", { param: "switchscene", idx: id, switchcmd: status }, Domotica.domoticz.update );
 		}
 	},
 	
@@ -99,7 +103,7 @@ Domotica.domoticz = {
 			element.find(".domoticz-status" ).text(status);
 			
 			// Update the lightbulb
-			Domotica.ui.toggleSwitch(element, result.Status == "On" || result.Status.indexOf( "Set level" ) == 0 );
+			Domotica.ui.toggleSwitch(element, result.Status == "On" || result.Status.indexOf( "Set Level" ) == 0 );
 			
 			// Also do generic updating
 			this.generic(element, result);

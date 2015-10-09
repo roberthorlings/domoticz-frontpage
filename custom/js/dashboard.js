@@ -17,6 +17,7 @@ Domotica = {
 			Domotica.initialization.enableSwitches();
 			Domotica.initialization.enableHeaters();
 			Domotica.initialization.enableSunscreen();
+			Domotica.initialization.enableScenes();
 			
 			if(Domotica.sonos)
 				Domotica.sonos.initialize();
@@ -56,6 +57,17 @@ Domotica = {
 			// Make sure changing the slider doesn't switch off the lights
 			$(".dimmer-switch .slider").on("click", function(e) {
 				return false;
+			});
+		},
+		
+		// Enable scenes
+		enableScenes: function() {
+			// Add a switch event for onclick
+			$(".scene").on("click", function(e) {
+				Domotica.domoticz.change.scene($(this).data("domoticz-id"), "On");
+				$(this)
+					.fadeTo('fast', 0.6)
+					.fadeTo('fast', 1.0);
 			});
 		},
 		
