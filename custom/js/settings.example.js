@@ -30,6 +30,10 @@ Domotica.settings = {
 		
 		// Number of days to show the forecast for
 		daysToForecast: 3,
+		
+		// API key needed to access openweathermap
+		// See http://openweathermap.org/appid
+		apiKey: ""
 	},
 	moon: {
 		// Default update frequency in ms.

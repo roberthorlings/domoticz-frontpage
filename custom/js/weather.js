@@ -38,7 +38,7 @@ Domotica.weather = {
 			
 			// Update generic weather
 			$.each(data.main, function(idx, value) {
-				element.find( ".generic-temperature ." + idx).each(function(i, el) {
+				element.find( ".generic-weather ." + idx).each(function(i, el) {
 					$el = $(el);
 					if( $el.hasClass( "intTemperature" ) ) {
 						$el.text(Math.round(value));	
@@ -329,6 +329,9 @@ Domotica.weather = {
 		// Metric units and Dutch language
 		parameters.units = "metric";
 		parameters.lang = "nl";
+		
+		// App ID
+		parameters.appid = Domotica.settings.weather.apiKey;
 		
 		// Actually do the call and call the callback
 		$.get( url, parameters, function(data, textStatus, jqXHR) {
