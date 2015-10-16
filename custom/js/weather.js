@@ -108,18 +108,19 @@ Domotica.weather = {
 			$( ".weather-forecast li:not(.template)" ).remove();
 			
 			$.each( data.list, function(idx, item) {
-				// Skip today in the forecasts
-				if( idx == 0 )
-					return;
-				
-				// Create a clone of the template
-				var element = template.clone().removeClass( "template" );
-				
-				// Fill the template
-				that.forecastForASingleDay(element, item);
-				
-				// Add the template to the screen
-				template.parent().append(element);
+				// Skip today in the forecasts, but show it in a separate element
+				if( idx == 0 ) {
+					that.forecastForASingleDay($( ".today-forecast"), item)
+				} else {
+					// Create a clone of the template
+					var element = template.clone().removeClass( "template" );
+					
+					// Fill the template
+					that.forecastForASingleDay(element, item);
+					
+					// Add the template to the screen
+					template.parent().append(element);
+				}
 			});
 			
 			// Remove loading icon
