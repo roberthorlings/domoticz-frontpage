@@ -22,11 +22,17 @@
 	header { display: none; }
 	.main-sidebar, .control-sidebar { padding-top: 0; }
 	
-	.scene .description { font-size: 15px; }
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 768px) {
 	.scene .description { font-size: 15px; }
+	
+	.scenes { 
+	    border-top: 1px solid grey;
+	    border-bottom: 1px solid grey;
+	    padding-top: 15px;
+	    padding-bottom: 15px;
+    }
 }
 
 /* Overrides for the default theme to fit nicely on a smartphone screen */

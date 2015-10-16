@@ -38,7 +38,7 @@ section.sidebar .sidebar-menu>li.active>a { color: #0073b7; }
 /* Box headers */
 .box-header { padding: 6px 10px; }
 .info-box.box { border-top-width: 0; }
-.box { margin-bottom: 15px; }
+.box { margin-bottom: 13px; }
 
 /* Info box number overflow */
 .info-box-number {
@@ -71,6 +71,7 @@ section.sidebar .sidebar-menu>li.active>a { color: #0073b7; }
 .only-controls .controls { margin: 5px 0; }
 
 .scenes { margin-bottom: 15px; }
+.scenes .icon { background: rgba(0,0,0,0.2); }
 
 .scene {
     height: 90px;

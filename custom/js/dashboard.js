@@ -5,6 +5,8 @@ Domotica = {
 			// Set local for moment.js
 			moment.locale("nl");
 			
+			this.defaultUI.init();
+			
 			// Make sure the UI responds to user interaction
 			this.bindUIActions();
 			
@@ -25,6 +27,100 @@ Domotica = {
 			if(Domotica.chromecast)
 				Domotica.chromecast.initialize();
 		},
+		
+		defaultUI: {
+			init: function() {
+				this.switches();
+				this.dimmerSwitches();
+				this.heaters();
+			},
+			loadingOverlay: function(el) {
+				el.append( 
+					$( "<div>" ).addClass( "overlay loading" )
+						.append( $( "<i>" ).addClass( "fa fa-refresh fa-spin" ) ) 
+				);
+					
+			},
+			switches: function() {
+				$( ".switch.default-ui").each(function(idx,el) {
+					// Add icon
+					$(el).prepend( 
+						$("<span>" ).addClass( "info-box-icon" )
+							.append( $( "<i>" ).addClass( "fa fa-lightbulb-o") )
+					);
+					
+					// Add content itself. Title is given in an element with class title, or in a data-attribute
+					var title = $(el).find( ".title" );
+					
+					if( title.length == 0 ) {
+						title = $( "<span>" ).text( $(el).data( "title" ) );
+					}
+					
+					var content = $( "<div>" )
+						.addClass( "info-box-content" )
+						.append( title.addClass( "info-box-text" ) )
+						.append( $( "<span>" ).addClass( "info-box-number domoticz-status" ) )
+						.append( $( "<div>" ).addClass( "progress" ) )
+						.append( $( "<span>" ).addClass( "progress-description lastUpdate" ) )
+						
+					$(el).append(content);
+					
+					// Add overlay
+					Domotica.dashboard.defaultUI.loadingOverlay($(el));
+				});
+			},
+			
+			// Add dimmer functionality for dimmer switches
+			dimmerSwitches: function() {
+				// Dimmer switches are normal switches as well, and as such are already converted
+				$( ".dimmer-switch.default-ui").each(function(idx,el) {
+					// Replace 'last updated' item with slider
+					$(el).find( ".lastUpdate" ).replaceWith( 
+						$( "<div>" ).addClass( "progress value-slider" ).attr( "id", "dimmer-" + $(el).data( "domoticz-id" ) ) 
+					);
+				});
+			},
+			
+			// Add heater functionality
+			heaters: function() {
+				$( ".heater.default-ui").each(function(idx,el) {
+					// Add icon
+					$(el).prepend( 
+						$("<span>" ).addClass( "info-box-icon" ).addClass( "bg-" + $(el).data( "color" ) )
+							.append( $( "<i>" ).addClass( "ion ion-flame") )
+					);
+					
+					// Add content itself. Title is given in an element with class title, or in a data-attribute
+					var title = $(el).find( ".title" );
+					
+					if( title.length == 0 ) {
+						title = $( "<span>" ).text( $(el).data( "title" ) );
+					}
+					
+					var content = $( "<div>" )
+						.addClass( "info-box-content" )
+						.append( title.addClass( "info-box-text" ) )
+						.append( $( "<span>" ).addClass( "info-box-number temperature" ) )
+						.append( $( "<br />" ).addClass( "visible-xs" ) )
+						.append( $( "<div>" ).addClass( "progress" ) )
+						.append( $( "<div>" ).addClass( "progress value-slider" ).attr( "id", "dimmer-" + $(el).data( "domoticz-id" ) ) )
+						
+					// Add updown buttons for small screens
+					content.append( 
+						$( "<div>" ).addClass( "btn-group updown-buttons visible-xs" )
+							.append( $( "<button type='button'>" ).addClass( "btn btn-default up" ).append( $( "<i>" ).addClass( "fa fa-chevron-up" ) ) )
+							.append( $( "<button type='button'>" ).addClass( "btn btn-default down" ).append( $( "<i>" ).addClass( "fa fa-chevron-down" ) ) )
+					);
+				
+					$(el).append(content);
+					
+					// Add overlay
+					Domotica.dashboard.defaultUI.loadingOverlay($(el));
+				});
+				
+			}
+			
+		}
 		
 	},
 	
