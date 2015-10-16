@@ -74,16 +74,22 @@
 
 /* Decrease spacing between boxes */
 @media (max-width: 650px) {
-	.dashboard div.col { padding-left: 8px; padding-right: 8px; }
+	.dashboard .content, .dashboard div.col { padding-left: 8px; padding-right: 8px; }
+	.dashboard .row { margin-left: -8px; margin-right: -8px; }
+	
 	.dashboard .info-box, .dashboard .box, .dashboard .scenes { margin-bottom: 16px; }
 }
 @media (max-width: 550px) {
-	.dashboard div.col { padding-left: 5px; padding-right: 5px; }
+	.dashboard .content, .dashboard div.col { padding-left: 5px; padding-right: 5px; }
+	.dashboard .row { margin-left: -5px; margin-right: -5px; }
+	
 	.dashboard .info-box, .dashboard .box, .dashboard .scenes { margin-bottom: 10px; }
 	.dashboard .content { padding-top: 10px; padding-bottom: 10px;  }
 }
 @media (max-width: 450px) {
-	.dashboard div.col { padding-left: 3px; padding-right: 3px; }
+	.dashboard .content, .dashboard div.col { padding-left: 3px; padding-right: 3px; }
+	.dashboard .row { margin-left: -3px; margin-right: -3px; }
+	
 	.dashboard .info-box, .dashboard .box, .dashboard .scenes { margin-bottom: 6px; }
 	.dashboard .content { padding-top: 6px; padding-bottom: 6px; }
 	
