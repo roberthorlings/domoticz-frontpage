@@ -6,13 +6,13 @@
 	.dashboard .info-box-text { font-size: 13px; }
 	.dashboard .info-box-number { font-size: 16px; }
 	.dashboard .info-box .progress { margin-top: 2px; margin-bottom: 2px; }
-	.dashboard .progress-description { font-size: 12px;  }
+	.dashboard .progress-description { font-size: 10px;  }
 	
 	.dashboard .info-box, .box { margin-bottom: 7px; }
 	.dashboard div.col { padding-left: 8px; padding-right: 8px; }
 
 	.dashboard .scene { height: 70px; }
-	.dashboard .scene i.fa {
+	.dashboard .scene i {
 		font-size: 30px;
 		line-height: 40px;
 		margin-top: 2px; 
@@ -22,6 +22,11 @@
 	header { display: none; }
 	.main-sidebar, .control-sidebar { padding-top: 0; }
 	
+	/* Decrease temperature text */
+	.all-temperatures .box-header.with-border { padding: 3px 10px; }
+	.all-temperatures .centered-body { padding-top: 1px; padding-bottom: 1px; }
+	.all-temperatures .info-box-number { height: 22px; }
+	.all-temperatures { font-size: 12px; }
 }
 
 @media (min-width: 768px) {
@@ -31,7 +36,7 @@
 	    border-top: 1px solid grey;
 	    border-bottom: 1px solid grey;
 	    padding-top: 15px;
-	    padding-bottom: 15px;
+	    margin-bottom: 15px;
     }
 }
 

@@ -70,7 +70,7 @@ section.sidebar .sidebar-menu>li.active>a { color: #0073b7; }
 
 .only-controls .controls { margin: 5px 0; }
 
-.scenes { margin-bottom: 15px; }
+.scenes { }
 .scenes .icon { background: rgba(0,0,0,0.2); }
 
 .scene {
@@ -78,8 +78,9 @@ section.sidebar .sidebar-menu>li.active>a { color: #0073b7; }
     float: left;
     width: 100%;
     text-align: center;
+    margin-bottom: 15px;
 }
-.scene i.fa {
+.scene i {
 	font-size: 40px;
 	line-height: 55px;
 	margin-top: 5px; 
