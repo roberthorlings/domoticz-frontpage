@@ -1,13 +1,16 @@
 /* Overrides for the default theme to fit nicely on a table screen */
 @media (min-width: 992px) and (max-width:1199px) {
-	.dashboard .info-box { min-height: 70px; }
-	.dashboard .info-box-icon { font-size: 30px; width: 45px; height: 70px; line-height: 70px; }
 	.dashboard .info-box-content { margin-left: 45px; padding-top: 3px; padding-bottom: 3px; }
-	.dashboard .info-box-text { font-size: 13px; }
 	.dashboard .info-box-number { font-size: 16px; }
 	.dashboard .info-box .progress { margin-top: 2px; margin-bottom: 2px; }
 	.dashboard .progress-description { font-size: 10px;  }
-	
+
+	/* Smaller info boxes */
+	.dashboard .info-box { min-height: 70px; }
+	.dashboard .info-box-icon { font-size: 30px; width: 45px; height: 70px; line-height: 70px; }
+	.dashboard .info-box-text { font-size: 13px; }
+
+
 	.dashboard .info-box, .box { margin-bottom: 7px; }
 	.dashboard div.col { padding-left: 8px; padding-right: 8px; }
 
@@ -47,7 +50,12 @@
 	.dashboard .info-box-icon {  width: 100%; }
 	.dashboard .info-box-content { clear: left; margin-left: 0; text-align: center; }
 	.dashboard .generic-description { display: none; }
-	
+	.dashboard .info-box-text, .dashboard .scenes .description { font-size: 10px; }
+
+	/* Smaller info boxes */
+	.dashboard .info-box { min-height: 70px; }
+	.dashboard .info-box-icon { font-size: 30px;  height: 70px; line-height: 70px; }
+
 	/* Convert vertical buttons back into horizontal buttons */
 	.btn { padding: 3px 8px; }
 	
@@ -70,6 +78,8 @@
 	.heater .info-box-number:after { content: ")" }
 	
 	.scenes { margin-bottom: 16px; }
+	.scene i { font-size: 30px; }
+	.scenes .description { padding: 5px 10px; overflow: hidden;}
 }
 
 /* Decrease spacing between boxes */
